@@ -43,8 +43,6 @@ apt_packages:
   - chkrootkit
   - rkhunter
 
-
-
 # Install flatpak and listed packages
 install_flatpak: true
 flatpak_packages:
