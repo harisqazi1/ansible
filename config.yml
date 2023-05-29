@@ -66,4 +66,4 @@ snap_packages:
   - name: bitwarden
 
 #currently missing apps
-#ProtonVPN | VeraCrypt | brave | TOR | Lynis
+#ProtonVPN | VeraCrypt | brave | TOR | Lynis | codium
