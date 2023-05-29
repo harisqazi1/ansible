@@ -1,2 +1,19 @@
 ---
 # Variable file
+
+# Apt packages
+
+# ppa format
+apt_repositories:
+  - ppa:aslatter/ppa
+# apt naming format
+apt_packages:
+  - firefox
+  - htop
+  - btop
+  - nvtop
+
+# Install flatpak and listed packages
+install_flatpak: true
+flatpak_packages:
+  - name: com.github.z.Cumulonimbus

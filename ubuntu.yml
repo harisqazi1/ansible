@@ -1,9 +1,17 @@
 - name: Ubuntu Configuration
   hosts: all
   
+  vars_files:
+    - config.yml
+
   tasks:
-   - name: Ping my hosts
-     ansible.builtin.ping:
-   - name: Print message
-     ansible.builtin.debug:
-       msg: Hello world
+    - name: Include apt packages task configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/apt.yml
+      tags: ["apt"]
+      
+    - name: Include flatpak packages task configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/flatpak.yml
+      tags: ["flatpak"]
+      when: install_flatpak
