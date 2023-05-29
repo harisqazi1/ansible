@@ -3,17 +3,67 @@
 
 # Apt packages
 
-# ppa format
+# ppa
 apt_repositories:
-  - ppa:aslatter/ppa
-# apt naming format
+  - ppa:phoerious/keepassxc
+  - ppa:kdenlive/kdenlive-stable
+# apt
 apt_packages:
+  - gnome-tweaks
   - firefox
+  - zsh
   - htop
+  - terminator
   - btop
   - nvtop
+  - bashtop
+  - iftop
+  - keepassxc
+  - libreoffice
+  - qbittorrent
+  - steam
+  - codium
+  - vlc
+  - mpv
+  - bleachbit
+  - flameshot
+  - kid3
+  - mcomix
+  - obs-studio
+  - rhythmbox
+  - thunderbird
+  - variety
+  - virtualbox
+  - neofetch
+  - kdenlive
+  - akregator
+  - cherrytree
+  - clamav
+  - lynis
+  - chkrootkit
+  - rkhunter
+
+
 
 # Install flatpak and listed packages
 install_flatpak: true
 flatpak_packages:
-  - name: com.github.z.Cumulonimbus
+  - name: com.github.z.Cumulonimbus 
+  - name: org.gnome.DejaDup 
+  - name: io.freetubeapp.FreeTube
+  - name: net.lutris.Lutris
+  - name: org.onlyoffice.desktopeditors
+  - name: io.github.shiftey.Desktop
+  - name: io.gitlab.librewolf-community
+  - name: md.obsidian.Obsidian
+  - name: com.zettlr.Zettlr
+  - name: com.github.tchx84.Flatseal
+  - name: net.cozic.joplin_desktop
+
+# Install snap and and listed packages
+install_snap: true
+snap_packages:
+  - name: bitwarden
+
+#currently missing apps
+#ProtonVPN | VeraCrypt | brave | TOR | Lynis
