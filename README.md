@@ -21,9 +21,9 @@ python3 -m pip install --user argcomplete
 activate-global-python-argcomplete --user
 ```
 
+
 Capabilities:
 - 
-
 
 Sources:
 - https://docs.ansible.com/ansible/latest/getting_started/get_started_playbook.html
