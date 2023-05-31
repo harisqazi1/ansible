@@ -9,6 +9,8 @@ apt_repositories:
   - ppa:kdenlive/kdenlive-stable
 # apt
 apt_packages:
+  - codium
+  - brave
   - gnome-tweaks
   - firefox
   - zsh
@@ -42,6 +44,7 @@ apt_packages:
   - lynis
   - chkrootkit
   - rkhunter
+  - curl
 
 # Install flatpak and listed packages
 install_flatpak: true
@@ -57,12 +60,14 @@ flatpak_packages:
   - name: com.zettlr.Zettlr
   - name: com.github.tchx84.Flatseal
   - name: net.cozic.joplin_desktop
+  - name: com.vscodium.codium
 
 # Install snap and and listed packages
 install_snap: true
 snap_packages:
   - name: bitwarden
 
+
 #currently missing apps
-#ProtonVPN | VeraCrypt | brave | TOR | Lynis | codium
+#ProtonVPN | VeraCrypt | brave | TOR | Lynis 
 #Issues - bitwarden not installed properly

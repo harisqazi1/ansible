@@ -1,0 +1,24 @@
+---
+- name: Install Brave
+  block:
+    - name: somerepo | no apt key
+      ansible.builtin.get_url:
+        url: https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+        dest: /usr/share/keyrings/brave-browser-archive-keyring.gpg
+
+    - name: somerepo | apt source
+      ansible.builtin.apt_repository:
+        repo: "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"
+        state: present
+
+- name: Install Codium
+  block:
+    - name: somerepo |no apt key
+      ansible.builtin.get_url:
+        url: https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
+        dest: /usr/share/keyrings/vscodium-archive-keyring.gpg
+
+    - name: somerepo | apt source
+      ansible.builtin.apt_repository:
+        repo: "deb [signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg] https://download.vscodium.com/debs vscodium main"
+        state: present

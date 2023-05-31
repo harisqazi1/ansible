@@ -5,6 +5,12 @@
     - config.yml
 
   tasks:
+    - name: Install packages that have keys.
+      ansible.builtin.import_tasks:
+        file: tasks/apt_signed.yml
+      tags: ["apt_signed"]
+      when: apt_signed
+
     - name: Include apt packages task configuration.
       ansible.builtin.import_tasks:
         file: tasks/apt.yml
@@ -21,3 +27,4 @@
         file: tasks/snap.yml
       tags: ["snap"]
       when: install_snap
+    
