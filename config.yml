@@ -9,6 +9,7 @@ apt_repositories:
   - ppa:kdenlive/kdenlive-stable
 # apt
 apt_packages:
+  - docker-ce
   - codium
   - brave
   - gnome-tweaks
