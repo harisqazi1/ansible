@@ -4,6 +4,7 @@
 # Apt packages
 
 # ppa
+apt_signed: true
 apt_repositories:
   - ppa:phoerious/keepassxc
   - ppa:kdenlive/kdenlive-stable
