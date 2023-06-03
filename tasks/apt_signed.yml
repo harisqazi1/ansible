@@ -1,11 +1,14 @@
 ---
+- name: Create Directory for Keyrings
+  ansible.builtin.shell: mkdir /etc/apt/keyrings
+
 - name: Add apt GPG key
   ansible.builtin.apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
     keyring: /etc/apt/keyrings/docker.gpg
     state: present
-
-
+# https://askubuntu.com/questions/1437207/what-is-the-right-place-to-put-keyrings-for-repositories
+# https://stackoverflow.com/questions/68992799/warning-apt-key-is-deprecated-manage-keyring-files-in-trusted-gpg-d-instead
 - name: Add Docker Repository
   apt_repository:
     repo: deb https://download.docker.com/linux/ubuntu focal stable
