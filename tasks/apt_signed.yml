@@ -6,4 +6,37 @@
     dest: /etc/apt/trusted.gpg.d/docker.asc
     mode: '0644'
     force: true
+  become: true
+
+- name: Add VSCodium apt repository key.
+  ansible.builtin.get_url:
+    url: "https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg"
+    dest: /etc/apt/trusted.gpg.d/vscodium-archive-keyring.asc
+    mode: '0644'
+    force: true
+  become: true
+
+- name: Add Brave apt repository key.
+  ansible.builtin.get_url:
+    url: "https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg"
+    dest: /etc/apt/trusted.gpg.d/brave-browser-archive-keyring.asc
+    mode: '0644'
+    force: true
+  become: true
+
+- name: Add TOR apt repository key.
+  ansible.builtin.get_url:
+    url: "https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc"
+    dest: /etc/apt/trusted.gpg.d/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc
+    mode: '0644'
+    force: true
+  become: true
+
+- name: Add Signal apt repository key.
+  ansible.builtin.get_url:
+    url: "https://updates.signal.org/desktop/apt/keys.asc"
+    dest: /etc/apt/trusted.gpg.d/signal-desktop-keyring.asc
+    mode: '0644'
+    force: true
+  become: true
 

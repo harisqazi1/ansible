@@ -10,9 +10,12 @@ apt_repositories:
   - ppa:kdenlive/kdenlive-stable
 # apt
 apt_packages:
-  - docker-ce
+  - docker-io
+  - brave
   - codium
   - brave
+  - tor
+  - signal-desktop
   - gnome-tweaks
   - firefox
   - zsh
