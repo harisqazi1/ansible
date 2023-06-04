@@ -55,7 +55,7 @@
   become: true
   loop: "{{ apt_signed_repos }}"
   loop_control:
-    pause: 5 # 5 seconds
+    pause: 5 # 5 seconds - should resolve issue of failure to lock directory
   when:
     - apt_signed_repos is defined
     - apt_signed_repos is iterable
