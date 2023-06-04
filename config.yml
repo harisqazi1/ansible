@@ -13,9 +13,8 @@ apt_repositories:
 apt_packages:
   - apt-transport-https
   - docker
-  - brave
+  - brave-browser
   - codium
-  - brave
   - tor
   - signal-desktop
   - gnome-tweaks
@@ -52,6 +51,9 @@ apt_packages:
   - chkrootkit
   - rkhunter
   - curl
+
+apt_signed_repos:
+  - 
 
 # Install flatpak and listed packages
 install_flatpak: true

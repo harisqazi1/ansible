@@ -30,7 +30,7 @@
     repo: 'deb [signed-by=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.asc] https://download.vscodium.com/debs vscodium main'
     state: present
 
-# Brave
+# Brave - Error - repo is not signed
 - name: Add Brave apt repository key.
   ansible.builtin.get_url:
     url: "https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg"
@@ -44,7 +44,7 @@
     repo: 'deb [signed-by=/etc/apt/trusted.gpg.d/brave-browser-archive-keyring.asc] https://brave-browser-apt-release.s3.brave.com/ stable main'
     state: present
 
-# TOR
+# TOR - Error - repo is not signed
 - name: Add TOR apt repository key.
   ansible.builtin.get_url:
     url: "https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc"
@@ -71,3 +71,14 @@
   ansible.builtin.apt_repository:
     repo: 'deb [signed-by=/etc/apt/trusted.gpg.d/signal-desktop-keyring.asc] https://updates.signal.org/desktop/apt xenial main'
     state: present
+
+# Adding all aforementioned repositories into sources list
+- name: Add repositories into sources list.
+  ansible.builtin.apt_repository:
+    repo: "{{ item }}"
+    state: present
+  loop: "{{ apt_signed_repos }}"
+  when:
+    - apt_signed_repos is defined
+    - apt_signed_repos is iterable
+    - apt_signed_repos | length > 0
