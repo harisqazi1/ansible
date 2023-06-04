@@ -9,6 +9,11 @@
     force: true
   become: true
 
+- name: Add Docker repository into sources list.
+  ansible.builtin.apt_repository:
+    repo: 'deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/docker.asc] https://download.docker.com/linux/ubuntu jammy stable'
+    state: present
+
 - name: Add VSCodium apt repository key.
   ansible.builtin.get_url:
     url: "https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg"
@@ -17,7 +22,7 @@
     force: true
   become: true
 
-- name: Add VSCodium repo
+- name: Add VSCodium repository into sources list.
   ansible.builtin.apt_repository:
     repo: 'deb [signed-by=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.asc] https://download.vscodium.com/debs vscodium main'
     state: present
@@ -30,6 +35,11 @@
     force: true
   become: true
 
+- name: Add Brave repository into sources list.
+  ansible.builtin.apt_repository:
+    repo: 'deb [signed-by=/etc/apt/trusted.gpg.d/brave-browser-archive-keyring.asc] https://brave-browser-apt-release.s3.brave.com/ stable main'
+    state: present
+
 - name: Add TOR apt repository key.
   ansible.builtin.get_url:
     url: "https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc"
@@ -37,6 +47,12 @@
     mode: '0644'
     force: true
   become: true
+
+- name: Add TOR repository into sources list.
+  ansible.builtin.apt_repository:
+    repo: 'deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc] https://deb.torproject.org/torproject.org focal main'
+    state: present
+
 
 - name: Add Signal apt repository key.
   ansible.builtin.get_url:
@@ -46,3 +62,7 @@
     force: true
   become: true
 
+- name: Add Signal repository into sources list.
+  ansible.builtin.apt_repository:
+    repo: 'deb [signed-by=/etc/apt/trusted.gpg.d/signal-desktop-keyring.asc] https://updates.signal.org/desktop/apt xenial main'
+    state: present
