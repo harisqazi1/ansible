@@ -1,8 +1,9 @@
 ---
 # Variable file
 
-# Apt packages
+username: haris
 
+# Apt packages
 # ppa
 apt_signed: true
 apt_repositories:
@@ -73,6 +74,7 @@ install_snap: true
 snap_packages:
   - name: bitwarden
 
+install_deb: true
 
 #currently missing apps
 #ProtonVPN | VeraCrypt | brave | TOR | Lynis 

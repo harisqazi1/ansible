@@ -28,3 +28,9 @@
       tags: ["snap"]
       when: install_snap
     
+    - name: Include .deb packages task configuration.
+      ansible.builtin.import_tasks:
+        file: tasks/deb_packages.yml
+      tags: ["deb"]
+      when: install_deb
+    
