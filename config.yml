@@ -6,9 +6,6 @@ username: haris
 # Apt packages
 # ppa
 apt_signed: true
-apt_repositories:
-  - ppa:phoerious/keepassxc
-  - ppa:kdenlive/kdenlive-stable
 # apt
 apt_packages:
   - apt-transport-https
@@ -72,6 +69,8 @@ flatpak_packages:
   - name: com.github.tchx84.Flatseal
   - name: net.cozic.joplin_desktop
   - name: com.vscodium.codium
+  - name: org.kde.kdenlive
+  - name: org.keepassxc.KeePassXC
 
 # Install snap and and listed packages
 install_snap: true
