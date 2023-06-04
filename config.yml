@@ -10,9 +10,7 @@ apt_signed: true
 apt_packages:
   - apt-transport-https
   - docker.io
-  - brave-browser
   - codium
-  - tor
   - signal-desktop
   - gnome-tweaks
   - firefox
@@ -71,6 +69,9 @@ flatpak_packages:
   - name: com.vscodium.codium
   - name: org.kde.kdenlive
   - name: org.keepassxc.KeePassXC
+
+brave: true
+tor: true
 
 # Install snap and and listed packages
 install_snap: true

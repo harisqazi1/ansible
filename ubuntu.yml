@@ -21,7 +21,19 @@
         file: tasks/flatpak.yml
       tags: ["flatpak"]
       when: install_flatpak
+    
+    - name: Install the Brave browser.
+      ansible.builtin.import_tasks:
+        file: tasks/brave.yml
+      tags: ["brave"]
+      when: brave
       
+    - name: Install the tor browser.
+      ansible.builtin.import_tasks:
+        file: tasks/tor.yml
+      tags: ["tor"]
+      when: tor
+
     - name: Include snap packages task configuration.
       ansible.builtin.import_tasks:
         file: tasks/snap.yml
