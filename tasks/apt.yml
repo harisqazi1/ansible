@@ -15,4 +15,4 @@
   become: true
   ansible.builtin.command: >
     apt clean && apt autoremove && apt autoclean
-  when: apt_packages is defined and not install_result.skipped
+  when: apt_packages is defined # and not install_result.skipped
