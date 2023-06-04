@@ -1,7 +1,4 @@
 ---
-#https://www.jeffgeerling.com/blog/2022/aptkey-deprecated-debianubuntu-how-fix-ansible
-#https://stackoverflow.com/questions/71585303/how-can-i-manage-keyring-files-in-trusted-gpg-d-with-ansible-playbook-since-apt
-
 # Docker
 - name: Add Docker apt repository key.
   ansible.builtin.get_url:
@@ -57,6 +54,8 @@
     state: present
   become: true
   loop: "{{ apt_signed_repos }}"
+  loop_control:
+    pause: 5 # 5 seconds
   when:
     - apt_signed_repos is defined
     - apt_signed_repos is iterable
