@@ -28,7 +28,7 @@
       tags: ["brave"]
       when: brave
       
-    - name: Install the tor browser.
+    - name: "Install the tor browser in /home/{{ username }}/Downloads/."
       ansible.builtin.import_tasks:
         file: tasks/tor.yml
       tags: ["tor"]
