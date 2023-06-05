@@ -9,7 +9,7 @@
       ansible.builtin.import_tasks:
         file: tasks/apt_signed.yml
       tags: ["apt_signed"]
-      when: apt_signed
+      when: apt_signed|bool == true
 
     - name: Include apt packages task configuration.
       ansible.builtin.import_tasks:
@@ -20,29 +20,29 @@
       ansible.builtin.import_tasks:
         file: tasks/flatpak.yml
       tags: ["flatpak"]
-      when: install_flatpak
+      when: install_flatpak|bool == true
     
     - name: Install the Brave browser.
       ansible.builtin.import_tasks:
         file: tasks/brave.yml
       tags: ["brave"]
-      when: brave
+      when: brave|bool == true
       
     - name: "Install the tor browser in /home/{{ username }}/Downloads/."
       ansible.builtin.import_tasks:
         file: tasks/tor.yml
       tags: ["tor"]
-      when: tor
+      when: tor|bool == true
 
     - name: Include snap packages task configuration.
       ansible.builtin.import_tasks:
         file: tasks/snap.yml
       tags: ["snap"]
-      when: install_snap
+      when: install_snap|bool == true
     
     - name: Include .deb packages task configuration.
       ansible.builtin.import_tasks:
         file: tasks/deb_packages.yml
       tags: ["deb"]
-      when: install_deb
+      when: install_deb|bool == true
     
