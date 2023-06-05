@@ -6,10 +6,9 @@ username: haris
 apt_signed: true
 brave: true
 tor: true
+install_flatpak: true
 install_snap: true
 install_deb: true
-install_flatpak: true
-
 # Apt packages
 apt_packages:
   - apt-transport-https
