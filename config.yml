@@ -2,11 +2,15 @@
 # Variable file
 
 username: haris
+# Conditionals
+apt_signed: true
+brave: true
+tor: true
+install_snap: true
+install_deb: true
+install_flatpak: true
 
 # Apt packages
-# ppa
-apt_signed: true
-# apt
 apt_packages:
   - apt-transport-https
   - docker.io
@@ -53,7 +57,6 @@ apt_signed_repos:
   - 'deb [signed-by=/etc/apt/trusted.gpg.d/signal-desktop-keyring.asc] https://updates.signal.org/desktop/apt xenial main'
 
 # Install flatpak and listed packages
-install_flatpak: true
 flatpak_packages:
   - name: com.github.z.Cumulonimbus 
   - name: org.gnome.DejaDup 
@@ -70,15 +73,9 @@ flatpak_packages:
   - name: org.kde.kdenlive
   - name: org.keepassxc.KeePassXC
 
-brave: true
-tor: true
-
 # Install snap and and listed packages
-install_snap: true
 snap_packages:
   - name: bitwarden
-
-install_deb: true
 
 #currently missing apps
 #ProtonVPN | VeraCrypt | brave | TOR | Lynis 
