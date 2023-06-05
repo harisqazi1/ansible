@@ -2,13 +2,25 @@
 #Downloading and Installing .deb packages
 # https://stackoverflow.com/questions/71995796/installing-the-deb-package-via-ansible
 
+# Create a folder in Downloads for all .deb packages
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: "/home/{{ username }}/Downloads/debian"
+    state: directory
+    mode: '0755'
 # VeraCrypt
-- name: Download VeraCrypt .deb packagge.
+- name: Download VeraCrypt .deb package
   ansible.builtin.get_url:
     url: "https://launchpad.net/veracrypt/trunk/1.25.9/+download/veracrypt-1.25.9-Ubuntu-22.04-amd64.deb"
-    dest: "/home/{{ username }}/Downloads/veracrypt-amd64.deb"
+    dest: "/home/{{ username }}/Downloads/debian/veracrypt-amd64.deb"
 
 - name: Install VeraCrypt .deb package
   apt:
-    deb: "/home/{{ username }}/Downloads/veracrypt-amd64.deb"
+    deb: "/home/{{ username }}/Downloads/debian/veracrypt-amd64.deb"
   become: yes
+
+
+- name: Removing debian directory (clean-up)
+  ansible.builtin.file:
+    path: "/home/{{ username }}/Downloads/debian"
+    state: absent

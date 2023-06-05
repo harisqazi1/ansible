@@ -5,37 +5,37 @@
     - config.yml
 
   tasks:
-    - name: Install packages that have keys.
+    - name: Install packages that have keys
       ansible.builtin.import_tasks:
         file: tasks/apt_signed.yml
       tags: ["apt_signed"]
 
-    - name: Include apt packages task configuration.
+    - name: Include apt packages task configuration
       ansible.builtin.import_tasks:
         file: tasks/apt.yml
       tags: ["apt"]
 
-    - name: Include flatpak packages task configuration.
+    - name: Include flatpak packages task configuration
       ansible.builtin.import_tasks:
         file: tasks/flatpak.yml
       tags: ["flatpak"]
     
-    - name: Install the Brave browser.
+    - name: Install the Brave browser
       ansible.builtin.import_tasks:
         file: tasks/brave.yml
       tags: ["brave"]
       
-    - name: "Install the tor browser in /home/{{ username }}/Downloads/."
+    - name: "Install the tor browser in /home/{{ username }}/Downloads/"
       ansible.builtin.import_tasks:
         file: tasks/tor.yml
       tags: ["tor"]
 
-    - name: Include snap packages task configuration.
+    - name: Include snap packages task configuration
       ansible.builtin.import_tasks:
         file: tasks/snap.yml
       tags: ["snap"]
     
-    - name: Include .deb packages task configuration.
+    - name: Include .deb packages task configuration
       ansible.builtin.import_tasks:
         file: tasks/deb_packages.yml
       tags: ["deb"]

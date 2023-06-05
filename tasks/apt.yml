@@ -1,5 +1,5 @@
 ---
-- name: Install apt packages.
+- name: Install apt packages
   become: true
   ansible.builtin.apt:
     name: "{{ item.name | default(item) }}"
@@ -13,7 +13,7 @@
   register: install_result
   when: apt_packages is defined
 
-- name: Clean apt cache.
+- name: Clean apt cache
   become: true
   ansible.builtin.command: >
     apt clean && apt autoremove && apt autoclean

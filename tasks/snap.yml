@@ -1,11 +1,11 @@
 ---
-- name: Ensure Snapd installed.
+- name: Ensure Snapd installed
   become: true
   ansible.builtin.apt:
     name: snapd
     state: latest
 
-- name: Install Snap packages.
+- name: Install Snap packages
   become: true
   community.general.snap:
     name: "{{ item.name | default(item) }}"
