@@ -4,6 +4,10 @@
   vars_files:
     - config.yml
 
+  roles:
+    - role: petermosmans.customize-gnome
+      tags: ["gnome"]
+
   tasks:
     - name: Install packages that have keys
       ansible.builtin.import_tasks:
