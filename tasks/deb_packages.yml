@@ -3,7 +3,7 @@
 # https://stackoverflow.com/questions/71995796/installing-the-deb-package-via-ansible
 
 # Create a folder in Downloads for all .deb packages
-- name: Create a directory if it does not exist
+- name: Create a directory for debian packages
   ansible.builtin.file:
     path: "/home/{{ username }}/Downloads/debian"
     state: directory
@@ -18,7 +18,6 @@
   apt:
     deb: "/home/{{ username }}/Downloads/debian/veracrypt-amd64.deb"
   become: yes
-
 
 - name: Removing debian directory (clean-up)
   ansible.builtin.file:
