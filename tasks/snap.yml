@@ -14,5 +14,6 @@
   loop: "{{ snap_packages }}"
   when: snap_packages is defined
 
+# Link your snap .desktop folder inside one of your user or system .desktop folders
 - name: Show Snap packages in launcher
-  ansible.builtin.shell: export XDG_DATA_DIRS="${XDG_DATA_DIRS}:/var/lib/snapd/desktop"
+  ansible.builtin.shell: ln -s /var/lib/snapd/desktop/applications ~/.local/share/applications/snap
