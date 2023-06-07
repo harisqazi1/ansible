@@ -69,6 +69,7 @@ flatpak_packages:
 # Install snap and and listed packages
 snap_packages:
   - name: bitwarden
+  - name: authy
 
 #currently missing apps
 #ProtonVPN | VeraCrypt | brave | TOR | Lynis 
