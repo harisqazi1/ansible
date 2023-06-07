@@ -14,4 +14,5 @@
   loop: "{{ snap_packages }}"
   when: snap_packages is defined
 
-#Add task for adding package to launcher
+- name: Show Snap packages in launcher
+  ansible.builtin.shell: export XDG_DATA_DIRS="${XDG_DATA_DIRS}:/var/lib/snapd/desktop"
