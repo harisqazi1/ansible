@@ -1,7 +1,5 @@
 ---
 #Downloading and Installing .deb packages
-# https://stackoverflow.com/questions/71995796/installing-the-deb-package-via-ansible
-
 # Create a folder in Downloads for all .deb packages
 - name: Create a directory for debian packages
   ansible.builtin.file:

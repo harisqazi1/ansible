@@ -1,5 +1,4 @@
 ---
-# https://raw.githubusercontent.com/staticdev/ansible-role-brave/main/tasks/main.yml
 - name: Get keyring file
   ansible.builtin.get_url:
     url: https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg

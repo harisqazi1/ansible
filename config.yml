@@ -3,6 +3,8 @@
 
 username: "{{ lookup('env', 'USER') }}"
 
+# custom_hostname: pop-os
+
 gtk_version: 3.0
 gnome_user: "{{ lookup('env', 'USER') }}"
 gnome_extensions:
