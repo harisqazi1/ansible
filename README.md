@@ -7,18 +7,16 @@
 Installing Ansible:
 
 ```bash
-#Download pip
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-#Install pip
-python3 get-pip.py --user
-#Install Ansible
-python3 -m pip install --user ansible
-#Upgrade Ansible
-python3 -m pip install --upgrade --user ansible
-ansible --version
-#Adding Ansible command shell completion
-python3 -m pip install --user argcomplete
-activate-global-python-argcomplete --user
+# Install Ansible
+sudo apt install ansible
+# Download this repository
+git clone https://github.com/harisqazi1/ansible.git
+# Change Directory into the repo
+cd ansible
+# Install Roles from Ansible Galaxy
+ansible-galaxy install -r requirements.yml
+# Run the playbook
+ansible-playbook -i inventory.ini ubuntu.yml -K 
 ```
 
 

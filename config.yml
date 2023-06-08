@@ -1,7 +1,14 @@
 ---
 # Variable file
 
-username: haris
+username: "{{ lookup('env', 'USER') }}"
+
+gtk_version: 3.0
+gnome_user: "{{ lookup('env', 'USER') }}"
+gnome_extensions:
+  - id: 906 # Sound Input & Output Device Chooser
+    enable: true
+  - id: 19 # User Themes 
 
 # Apt packages
 apt_packages:
