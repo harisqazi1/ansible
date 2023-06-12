@@ -80,6 +80,9 @@ snap_packages:
   - name: bitwarden
   - name: authy
 
+npm_packages:
+  - name: n
+
 #currently missing apps
 #ProtonVPN | VeraCrypt | brave | TOR | Lynis 
 #Issues - bitwarden not installed properly
