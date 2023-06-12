@@ -12,6 +12,15 @@ gnome_extensions:
     enable: true
   - id: 19 # User Themes 
 
+zsh_plugins:
+  - zsh-users/zsh-syntax-highlighting
+  - zsh-users/zsh-history-substring-search
+  - zsh-users/zsh-autosuggestions
+  
+# Theme names have to be in the format github_user/theme_name
+zsh_themes:
+  - romkatv/powerlevel10k
+
 # Apt packages
 apt_packages:
   - apt-transport-https
