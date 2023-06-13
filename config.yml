@@ -5,6 +5,7 @@ username: "{{ lookup('env', 'USER') }}"
 
 # custom_hostname: pop-os
 
+# Gnome 
 gtk_version: 3.0
 gnome_user: "{{ lookup('env', 'USER') }}"
 gnome_extensions:
@@ -12,14 +13,24 @@ gnome_extensions:
     enable: true
   - id: 19 # User Themes 
 
-zsh_plugins:
-  - zsh-users/zsh-syntax-highlighting
-  - zsh-users/zsh-history-substring-search
-  - zsh-users/zsh-autosuggestions
-  
-# Theme names have to be in the format github_user/theme_name
-zsh_themes:
-  - romkatv/powerlevel10k
+# oh-my-zsh
+oh_my_zsh_theme: robbyrussell
+oh_my_zsh_install: true
+oh_my_zsh_update_mode: reminder
+oh_my_zsh_update_frequency: 10
+oh_my_zsh_write_zshrc: true
+
+users:
+  - username: "{{ username }}"
+    oh_my_zsh:
+      theme: robbyrussell
+      plugins:
+        - git
+        - zsh-syntax-highlighting
+        - zsh-autosuggestions
+      update_mode: reminder
+      update_frequency: 10
+      write_zshrc: true
 
 # Apt packages
 apt_packages:

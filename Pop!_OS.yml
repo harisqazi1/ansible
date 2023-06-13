@@ -7,6 +7,10 @@
   roles:
     - role: petermosmans.customize-gnome
       tags: ["gnome"]
+     - role: gantsign.oh-my-zsh
+       users:
+        - username: "{{ username }}"
+      tags: ["ohmyzsh"]
 
   tasks:
     - name: Install apt packages that have keys

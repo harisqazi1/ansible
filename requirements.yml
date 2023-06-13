@@ -1,3 +1,4 @@
 ---
 roles:
   - name: petermosmans.customize-gnome
+  - name: gantsign.oh-my-zsh
