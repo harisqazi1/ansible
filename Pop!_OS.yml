@@ -51,7 +51,14 @@
     - name: Install npm packages
       ansible.builtin.import_tasks:
         file: tasks/npm.yml
+      tags: ["npm"]
     
     - name: Modify the hostname
       ansible.builtin.import_tasks:
         file: tasks/hostname.yml
+      tags: ["hostname"]
+    
+    - name: Oh-my-zsh w/ Powerlevel10k
+      ansible.builtin.import_tasks:
+        file: tasks/zsh.yml
+      tags: ["hostname"]

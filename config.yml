@@ -14,23 +14,16 @@ gnome_extensions:
   - id: 19 # User Themes 
 
 # oh-my-zsh
-oh_my_zsh_theme: robbyrussell
-oh_my_zsh_install: true
-oh_my_zsh_update_mode: reminder
-oh_my_zsh_update_frequency: 10
-oh_my_zsh_write_zshrc: true
+# Install and configure zsh
+configure_zsh: true
+# Plugin names have to be in the format github_user/plugin_name
+zsh_plugins:
+  - zsh-users/zsh-syntax-highlighting
+  - zsh-users/zsh-history-substring-search
 
-users:
-  - username: "{{ username }}"
-    oh_my_zsh:
-      theme: robbyrussell
-      plugins:
-        - git
-        - zsh-syntax-highlighting
-        - zsh-autosuggestions
-      update_mode: reminder
-      update_frequency: 10
-      write_zshrc: true
+# Theme names have to be in the format github_user/theme_name
+zsh_themes:
+  - romkatv/powerlevel10k
 
 # Apt packages
 apt_packages:
