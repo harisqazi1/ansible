@@ -7,6 +7,8 @@
   roles:
     - role: petermosmans.customize-gnome
       tags: ["gnome"]
+    - role: tomereli.oh_my_zsh_p10k
+      tags: ["ohmyzsh"]
 
   tasks:
     - name: Install apt packages that have keys

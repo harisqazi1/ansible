@@ -13,17 +13,14 @@ gnome_extensions:
     enable: true
   - id: 19 # User Themes 
 
-# oh-my-zsh
-# Install and configure zsh
-configure_zsh: true
-# Plugin names have to be in the format github_user/plugin_name
-zsh_plugins:
-  - zsh-users/zsh-syntax-highlighting
-  - zsh-users/zsh-history-substring-search
-
-# Theme names have to be in the format github_user/theme_name
-zsh_themes:
-  - romkatv/powerlevel10k
+# Oh My Zsh
+oh_my_zsh_theme: powerlevel10k
+oh_my_zsh_plugins:
+    - git
+    - zsh-autosuggestions
+    - zsh-syntax-highlighting
+users:
+    - username: "{{ username }}"
 
 # Apt packages
 apt_packages:

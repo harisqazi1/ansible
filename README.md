@@ -16,7 +16,7 @@ cd ansible
 # Install Roles from Ansible Galaxy
 ansible-galaxy install -r requirements.yml
 # Run the playbook
-ansible-playbook -i inventory.ini ubuntu.yml -K 
+ansible-playbook -i inventory.ini Pop!_OS.yml -K 
 ```
 
 
