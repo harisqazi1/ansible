@@ -1,4 +1,4 @@
 ---
 roles:
   - name: petermosmans.customize-gnome
-  - name: gantsign.oh-my-zsh
+  - name: tomereli.oh_my_zsh_p10k

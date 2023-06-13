@@ -1,6 +1,0 @@
----
-- name: Ensure ZSH installed.
-  become: true
-  ansible.builtin.apt:
-    name: zsh
-    state: latest

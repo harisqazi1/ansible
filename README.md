@@ -16,7 +16,7 @@ cd ansible
 # Install Roles from Ansible Galaxy
 ansible-galaxy install -r requirements.yml
 # Run the playbook
-ansible-playbook -i inventory.ini Pop!_OS.yml -K 
+ansible-playbook -i inventory.ini Pop\!_OS.yml -K 
 ```
 
 
@@ -44,3 +44,4 @@ Sources:
 - https://github.com/AlexNabokikh/ubuntu-playbook/blob/master/tasks/extra_packages.yml
 - https://github.com/AlexNabokikh/ubuntu-playbook/blob/master/tasks/hostname.yml
 - https://github.com/AlexNabokikh/ubuntu-playbook/blob/master/tasks/zsh.yml
+- https://github.com/tomereli/ansible-role-oh-my-zsh-p10k
