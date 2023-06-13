@@ -12,10 +12,7 @@ gnome_extensions:
   - id: 906 # Sound Input & Output Device Chooser
     enable: true
   - id: 19 # User Themes 
-gnome_gsettings:
-  - schema: org.gnome.shell.extensions.user-theme
-    key: name
-    value: '"Flat-Remix-Blue-Dark"'
+    enable: true
 
 # Oh My Zsh
 oh_my_zsh_theme: powerlevel10k
@@ -26,12 +23,8 @@ oh_my_zsh_plugins:
 users:
     - username: "{{ username }}"
 
-apt_repositories:
-  - ppa:daniruiz/flat-remix
-
 # Apt packages
 apt_packages:
-  - flat-remix-gnome
   - apt-transport-https
   - docker.io
   - codium

@@ -1,0 +1,28 @@
+---
+# Install Flat Remix GNOME theme & Candy Icons
+
+- name: Create a directory for theme
+  ansible.builtin.file:
+    path: "/home/{{ username }}/Downloads/theme"
+    state: directory
+    mode: '0755'
+
+- name: Clone the repo
+  ansible.builtin.git:
+    repo: 'https://github.com/daniruiz/flat-remix-gnome.git'
+    dest: "/home/{{ username }}/Downloads/theme"
+    clone: yes
+
+- name: Create the theme directory (locally)
+  ansible.builtin.file:
+    path: "/home/{{ username }}/.themes"
+    state: directory
+    mode: '0755'
+
+
+- name: Create the icon directory (locally)
+  ansible.builtin.file:
+    path: "/home/{{ username }}/.icons"
+    state: directory
+    mode: '0755'
+
