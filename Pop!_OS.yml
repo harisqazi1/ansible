@@ -56,3 +56,7 @@
         file: tasks/hostname.yml
       tags: ["hostname"]
     
+    - name: Install Theme and Icons
+      ansible.builtin.import_tasks:
+        file: tasks/hostname.yml
+      tags: ["theme_icons"]

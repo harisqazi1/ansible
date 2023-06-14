@@ -1,6 +1,7 @@
 ---
 # Install Flat Remix GNOME theme & Candy Icons
 
+# Theme
 - name: Create a directory for theme
   ansible.builtin.file:
     path: "/home/{{ username }}/Downloads/theme"
@@ -11,7 +12,7 @@
   ansible.builtin.git:
     repo: 'https://github.com/daniruiz/flat-remix-gnome.git'
     dest: "/home/{{ username }}/Downloads/theme"
-    clone: yes
+    update: no
 
 - name: Create the theme directory (locally)
   ansible.builtin.file:
@@ -19,6 +20,25 @@
     state: directory
     mode: '0755'
 
+- name: Copying themes (locally)
+  ansible.builtin.synchronize:
+    src: "/home/{{ username }}/Downloads/theme/themes/"
+    dest: "/home/{{ username }}/.themes"
+
+- name: Gsettings for theme
+  ansible.builtin.command: gsettings set org.gnome.shell.extensions.user-theme name "Flat-Remix-Blue-Dark"
+
+# Icon
+- name: Create a directory for icons
+  ansible.builtin.file:
+    path: "/home/{{ username }}/Downloads/icon"
+    state: directory
+    mode: '0755'
+
+- name: Download icons .zip
+  ansible.builtin.get_url:
+    url: "https://github.com/EliverLara/candy-icons/archive/refs/heads/master.zip"
+    dest: "/home/{{ username }}/Downloads/icon/candy_icons.zip"
 
 - name: Create the icon directory (locally)
   ansible.builtin.file:
@@ -26,3 +46,7 @@
     state: directory
     mode: '0755'
 
+- name: Extract zip to .icons
+  ansible.builtin.unarchive:
+    src: "/home/{{ username }}/Downloads/icon/candy_icons.zip"
+    dest: "/home/{{ username }}/.icons"
