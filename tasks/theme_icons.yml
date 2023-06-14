@@ -50,3 +50,6 @@
   ansible.builtin.unarchive:
     src: "/home/{{ username }}/Downloads/icon/candy_icons.zip"
     dest: "/home/{{ username }}/.icons"
+
+- name: Gsettings for icons
+  ansible.builtin.command: gsettings set org.gnome.desktop.interface icon-theme candy-icons-master
