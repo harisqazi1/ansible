@@ -1,0 +1,36 @@
+---
+# Randomize MAC Address
+- name: NetworkManager Trackability Reduction
+  ansible.builtin.command:     cmd: |
+      cat << EOF >> /etc/NetworkManager/conf.d/00-macrandomize.conf
+      [device]
+      wifi.scan-rand-mac-address=yes
+
+      [connection]
+      wifi.cloned-mac-address=random
+      ethernet.cloned-mac-address=random
+      EOF
+
+- name: Restart Network Manager
+  become: true #need sudo
+  ansible.builtin.command: systemctl restart NetworkManager
+
+# Modifying the Machine ID to the Whonix ID: b08dfa6083e7567a1921a715000001fb
+- name: Modify Machine ID
+  ansible.builtin.command: echo "b08dfa6083e7567a1921a715000001fb" > /etc/machine-id
+
+# Microcode Updates
+- name: Enable non-free repository
+  become: true #need sudo
+  ansible.builtin.command: add-apt-repository multiverse
+
+- name: Install Microcode to get fixes and mitigations for CPU vulnerabilities
+  become: true #need sudo
+  ansible.builtin.command: add-apt-repository multiverse
+
+# Firmware Updates
+- name: Update Firmware Metadata
+  ansible.builtin.command: fwupdmgr refresh
+
+- name: Download and Install Firmware Update
+  ansible.builtin.command: fwupdmgr update

@@ -53,3 +53,14 @@
 
 - name: Gsettings for icons
   ansible.builtin.command: gsettings set org.gnome.desktop.interface icon-theme candy-icons-master
+
+# Clean-up for both
+- name: Removing theme directory (clean-up)
+  ansible.builtin.file:
+    path: "/home/{{ username }}/Downloads/theme"
+    state: absent
+
+- name: Removing icons directory (clean-up)
+  ansible.builtin.file:
+    path: "/home/{{ username }}/Downloads/icon"
+    state: absent
