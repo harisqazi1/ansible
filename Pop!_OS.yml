@@ -67,3 +67,8 @@
       ansible.builtin.import_tasks:
         file: tasks/hardening.yml
       tags: ["hardening"]
+
+    - name: Download dotfiles
+      ansible.builtin.import_tasks:
+        file: tasks/dotfiles.yml
+      tags: ["dotfiles"]

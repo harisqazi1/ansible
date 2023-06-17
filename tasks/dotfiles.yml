@@ -1,0 +1,12 @@
+---
+# Install dotfiles from a location
+
+- name: Download .zshrc
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/harisqazi1/dotfiles/main/.zshrc
+    dest: /home/{{ username }}/.zshrc
+
+- name: Download .p10k.zsh
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/harisqazi1/dotfiles/main/.p10k.zsh
+    dest: /home/{{ username }}/.p10k.zsh
