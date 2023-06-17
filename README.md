@@ -16,6 +16,9 @@ ansible-galaxy install -r requirements.yml
 # Run the playbook
 ansible-playbook -i inventory.ini Pop\!_OS.yml -K 
 ```
+## NOTE
+
+I have used some "loop_control"s to give the system some time to release the dpkg locks. It is currently 10 seconds. This will make the playbook take much longer, but it should complete in one run.
 
 ## Directory Layout
 
