@@ -72,3 +72,8 @@
       ansible.builtin.import_tasks:
         file: tasks/dotfiles.yml
       tags: ["dotfiles"]
+
+    - name: Install cheat
+      ansible.builtin.import_tasks:
+        file: tasks/cheat.yml
+      tags: ["cheat"]
