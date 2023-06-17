@@ -13,6 +13,6 @@
 - name: Run `cheat` and answer the prompts to install cheat
   ansible.builtin.expect:
     command: cheat ls #using ls, but others could suffice as well
-    responses:
-      config_file: "Y"
-      community_cheatsheets: "Y"
+    responses: # you could copy the whole string here as well. This should use regex to match the questions 
+      'create one now': 'Y'
+      'community': 'Y'

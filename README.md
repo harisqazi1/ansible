@@ -45,3 +45,4 @@ Sources:
 - https://github.com/AlexNabokikh/ubuntu-playbook/blob/master/tasks/hostname.yml
 - https://stackoverflow.com/questions/40230184/how-to-do-multiline-shell-script-in-ansible#40230416
 - https://stackoverflow.com/questions/47994497/how-to-pipe-commands-using-ansible-e-g-curl-sl-host-com-sudo-bash
+- https://serverfault.com/questions/939671/ansible-expect-is-not-sending-response
