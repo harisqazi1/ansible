@@ -43,5 +43,4 @@ Sources:
 - https://raw.githubusercontent.com/staticdev/ansible-role-brave/main/tasks/main.yml
 - https://github.com/AlexNabokikh/ubuntu-playbook/blob/master/tasks/extra_packages.yml
 - https://github.com/AlexNabokikh/ubuntu-playbook/blob/master/tasks/hostname.yml
-- https://github.com/AlexNabokikh/ubuntu-playbook/blob/master/tasks/zsh.yml
-- https://github.com/tomereli/ansible-role-oh-my-zsh-p10k
+- https://stackoverflow.com/questions/40230184/how-to-do-multiline-shell-script-in-ansible#40230416
