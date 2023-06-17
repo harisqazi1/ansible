@@ -62,3 +62,8 @@
       ansible.builtin.import_tasks:
         file: tasks/hostname.yml
       tags: ["theme_icons"]
+
+    - name: Pop!_OS Hardening
+      ansible.builtin.import_tasks:
+        file: tasks/hostname.yml
+      tags: ["hardening"]
