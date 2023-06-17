@@ -45,7 +45,7 @@
   become: true
   loop: "{{ apt_signed_repos }}"
   loop_control:
-    pause: 2 # 10 second pause - 5 seemed to be a bit less
+    pause: 10 # 10 second pause - 5 seemed to be a bit less
   when:
     - apt_signed_repos is defined
     - apt_signed_repos is iterable
