@@ -9,7 +9,9 @@
       tags: ["gnome"]
     - role: tomereli.oh_my_zsh_p10k
       tags: ["ohmyzsh"]
-
+    - role: geerlingguy.dotfiles
+      tags: ["dotfiles"]
+    
   tasks:
     - name: Install apt packages that have keys
       ansible.builtin.import_tasks:

@@ -5,6 +5,13 @@ username: "{{ lookup('env', 'USER') }}"
 
 # custom_hostname: localhost
 
+dotfiles_repo: https://github.com/harisqazi1/dotfiles
+dotfiles_repo_accept_hostkey: false
+dotfiles_home: "~"
+dotfiles_files:
+  - .p10k.zsh
+  - .zshrc
+
 # Gnome 
 gtk_version: 3.0
 gnome_user: "{{ lookup('env', 'USER') }}"
