@@ -75,8 +75,3 @@
       ansible.builtin.import_tasks:
         file: tasks/cheat.yml
       tags: ["cheat"]
-
-    - name: Post Install
-      ansible.builtin.import_tasks:
-        file: tasks/post_install.yml
-      tags: ["post_install"]

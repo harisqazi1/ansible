@@ -1,10 +1,8 @@
 # Ansible Playbooks
 
-
-
 ## Linux (Pop!_OS)
 
-Installing Ansible:
+### Installing Ansible and Running the Playbook:
 
 ```bash
 # Install Ansible
@@ -19,11 +17,72 @@ ansible-galaxy install -r requirements.yml
 ansible-playbook -i inventory.ini Pop\!_OS.yml -K 
 ```
 
+## Directory Layout
 
-Capabilities:
-- 
+```
+.
+└── ansible/
+    ├── tasks/ 
+    │   ├── apt_signed.yml
+    │   ├── apt.yml
+    │   ├── brave.yml
+    │   ├── cheat.yml
+    │   ├── deb_packages.yml
+    │   ├── dotfiles.yml
+    │   ├── flatpak.yml
+    │   ├── hardening.yml
+    │   ├── hostname.yml
+    │   ├── npm.yml
+    │   ├── post_install.yml
+    │   ├── snap.yml
+    │   ├── theme_icons.yml
+    │   ├── tor.yml
+    │   └── tweaks.yml
+    ├── LICENSE
+    ├── POP!_OS.yml                 # Main Playbook
+    ├── README.md                   # Readme file
+    ├── config.yml                  # Configuration / Variable file
+    ├── inventory.ini               # Inventory list
+    └── requirements.yml            # Roles used in Playbook
+```
 
-Sources:
+## Capabilities:
+
+To create this playbook, I referenced Alexander Nabokikh's playbook (https://github.com/AlexNabokikh/ubuntu-playbook/) a good amount. Therefore, it would be unfair if I did not give credit where it is due.
+
+- Install apt packages that are signed (me)
+- Install apt packages (Alexander Nabokikh)
+- Install Brave (can't recall location, but was copied from Ansible Galaxy)
+- Install cheat (me)
+- Install .deb packages from source (me)
+- Download dotfiles (me)
+- Install flatpaks (Alexander Nabokikh)
+- Hardening the OS a bit (me)
+- Modify the hostname (Alexander Nabokikh)
+- Install npm packages (Alexander Nabokikh)
+- Install snap packages (Alexander Nabokikh)
+- Installing a theme and the icon pack (me)
+- Downloading TOR from source (me)
+- Tweaking Gnome with Gsettings (me)
+
+## Maintenance:
+Some items in the playbook rely on outside factors, such as links. Here are what is needed to be maintained for the playbook to work as expected.
+- tasks/tor.yml - Updating the link for TOR
+- tasks/cheat.yml - Updating the link for cheat
+- tasks/deb_packages.yml - Updating the link for VeraCrypt
+
+## Post-Install Tasks
+Here are some tasks for me that I would do after this playbook has completed:
+- Run `p10k configure` to configure ohmyzsh
+- Download the archenfox/user.js config for FireFox
+- Update the refresh rate
+- Update DNS in browsers and on the OS
+- Make MPV default video player
+- Move the dock to the left side
+- If you are using two monitors, and if the login page moves over to your secondary monitor
+    - `sudo cp ~/.config/monitors.xml /var/lib/gdm3/.config/`
+
+## Sources:
 - https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html
 - https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html#yaml-syntax
 - https://galaxy.ansible.com/gantsign/oh-my-zsh
