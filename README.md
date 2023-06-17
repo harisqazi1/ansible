@@ -44,3 +44,4 @@ Sources:
 - https://github.com/AlexNabokikh/ubuntu-playbook/blob/master/tasks/extra_packages.yml
 - https://github.com/AlexNabokikh/ubuntu-playbook/blob/master/tasks/hostname.yml
 - https://stackoverflow.com/questions/40230184/how-to-do-multiline-shell-script-in-ansible#40230416
+- https://stackoverflow.com/questions/47994497/how-to-pipe-commands-using-ansible-e-g-curl-sl-host-com-sudo-bash
