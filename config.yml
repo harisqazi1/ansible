@@ -63,6 +63,7 @@ apt_packages:
   - rkhunter
   - curl
   - snapd
+  - mat2
   - kloak #Keystroke Anonymization
   - firejail #method of sandboxing
 
