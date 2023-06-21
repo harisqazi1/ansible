@@ -66,6 +66,7 @@ apt_packages:
   - mat2
   - kloak #Keystroke Anonymization
   - firejail #method of sandboxing
+  - filezilla
 
 apt_signed_repos:
   - 'deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/docker.asc] https://download.docker.com/linux/ubuntu jammy stable'
