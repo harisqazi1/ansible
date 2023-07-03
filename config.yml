@@ -91,6 +91,7 @@ flatpak_packages:
   - name: com.vscodium.codium
   - name: org.kde.kdenlive
   - name: org.keepassxc.KeePassXC
+  - name: org.kiwix.desktop
 
 # Install snap and and listed packages
 snap_packages:
