@@ -67,6 +67,7 @@ apt_packages:
   - kloak #Keystroke Anonymization
   - firejail #method of sandboxing
   - filezilla
+  - python3.9
 
 apt_signed_repos:
   - 'deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/docker.asc] https://download.docker.com/linux/ubuntu jammy stable'
