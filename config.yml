@@ -50,7 +50,6 @@ apt_packages:
   - mcomix
   - obs-studio
   - rhythmbox
-  - thunderbird
   - variety
   - virtualbox
   - neofetch
@@ -92,11 +91,13 @@ flatpak_packages:
   - name: org.kde.kdenlive
   - name: org.keepassxc.KeePassXC
   - name: org.kiwix.desktop
+  - name: com.calibre_ebook.calibre
 
 # Install snap and and listed packages
 snap_packages:
   - name: bitwarden
   - name: authy
+  - name: postman
 
 npm_packages:
   - name: n
