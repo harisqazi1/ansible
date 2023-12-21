@@ -15,13 +15,14 @@ gnome_extensions:
     enable: true
 
 # Oh My Zsh
-oh_my_zsh_theme: powerlevel10k
-oh_my_zsh_plugins:
-    - git
-    - zsh-autosuggestions
-    - zsh-syntax-highlighting
-users:
-    - username: "{{ username }}"
+ohmyzsh_users:
+  - user: "{{ username }}"
+    state: present
+    theme: powerlevel10k
+    plugins:
+      - git
+      - zsh-autosuggestions
+      - zsh-syntax-highlighting
 
 # Apt packages
 apt_packages:

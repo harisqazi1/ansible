@@ -1,4 +1,4 @@
 ---
 roles:
   - name: petermosmans.customize-gnome
-  - name: tomereli.oh_my_zsh_p10k
+  - name: samyroad.ohmyzsh
