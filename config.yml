@@ -73,7 +73,6 @@ apt_signed_repos:
   - 'deb [signed-by=/etc/apt/trusted.gpg.d/signal-desktop-keyring.asc] https://updates.signal.org/desktop/apt xenial main'
   - 'deb [signed-by=/etc/apt/trusted.gpg.d/derivative.asc] https://deb.whonix.org bullseye main contrib non-free'
 
-
 # Install flatpak and listed packages
 flatpak_packages:
   - name: com.github.z.Cumulonimbus 

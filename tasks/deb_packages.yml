@@ -9,7 +9,7 @@
 # VeraCrypt
 - name: Download VeraCrypt .deb package
   ansible.builtin.get_url:
-    url: "https://launchpad.net/veracrypt/trunk/1.25.9/+download/veracrypt-1.25.9-Ubuntu-22.04-amd64.deb"
+    url: "https://launchpad.net/veracrypt/trunk/1.26.7/+download/veracrypt-1.26.7-Ubuntu-22.04-amd64.deb"
     dest: "/home/{{ username }}/Downloads/debian/veracrypt-amd64.deb"
 
 - name: Install VeraCrypt .deb package
