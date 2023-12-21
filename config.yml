@@ -75,8 +75,8 @@ apt_signed_repos:
 
 # Install flatpak and listed packages
 flatpak_packages:
-  - name: com.github.z.Cumulonimbus 
-  - name: org.gnome.DejaDup 
+  - name: com.github.z.Cumulonimbus
+  - name: org.gnome.DejaDup
   - name: io.freetubeapp.FreeTube
   - name: net.lutris.Lutris
   - name: org.onlyoffice.desktopeditors
