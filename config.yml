@@ -13,12 +13,6 @@ gnome_extensions:
   - id: 19 # User Themes 
     enable: true
 gnome_gsettings:
-  - schema: org.gnome.shell.extensions.dock
-    key: position
-    value: '"left"'
-  - schema: org.gnome.mutter
-    key: center-new-windows
-    value: true
   - schema: org.gnome.desktop.wm.preferences
     key: button-layout
     value: ":minimize,maximize,close"

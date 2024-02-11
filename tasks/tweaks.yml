@@ -1,0 +1,7 @@
+---
+# Tweaks that the gnome role has difficulty implementing
+- name: Move dock to left side
+  ansible.builtin.shell: gsettings set org.gnome.shell.extensions.dock position left
+
+- name: Center all new windows
+  ansible.builtin.shell: gsettings set org.gnome.mutter center-new-windows true 
