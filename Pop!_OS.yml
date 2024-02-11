@@ -24,11 +24,6 @@
         file: tasks/flatpak.yml
       tags: ["flatpak"]
     
-    - name: Install the Brave browser
-      ansible.builtin.import_tasks:
-        file: tasks/brave.yml
-      tags: ["brave"]
-      
     - name: "Install the tor browser in /home/{{ username }}/Downloads/"
       ansible.builtin.import_tasks:
         file: tasks/tor.yml
