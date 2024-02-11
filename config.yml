@@ -1,9 +1,8 @@
 ---
 # Variable file
-
 username: "{{ lookup('env', 'USER') }}"
 
-# custom_hostname: localhost
+custom_hostname: localhost
 
 # Gnome 
 gtk_version: 3.0
@@ -13,21 +12,20 @@ gnome_extensions:
     enable: true
   - id: 19 # User Themes 
     enable: true
-
-# Oh My Zsh
-ohmyzsh_users:
-  - user: "{{ username }}"
-    state: present
-    theme: powerlevel10k
-    plugins:
-      - git
-      - zsh-autosuggestions
-      - zsh-syntax-highlighting
+gnome_gsettings:
+  - schema: org.gnome.shell.extensions.dock
+    key: position
+    value: '"left"'
+  - schema: org.gnome.mutter
+    key: center-new-windows
+    value: true
+  - schema: org.gnome.desktop.wm.preferences
+    key: button-layout
+    value: ":minimize,maximize,close"
 
 # Apt packages
 apt_packages:
   - apt-transport-https
-  - docker.io
   - codium
   - signal-desktop
   - gnome-tweaks
@@ -42,13 +40,11 @@ apt_packages:
   - keepassxc
   - libreoffice
   - qbittorrent
-  - steam
   - vlc
   - mpv
   - bleachbit
   - flameshot
   - kid3
-  - mcomix
   - obs-studio
   - rhythmbox
   - variety
@@ -64,13 +60,17 @@ apt_packages:
   - curl
   - snapd
   - mat2
-  - kloak #Keystroke Anonymization
-  - firejail #method of sandboxing
   - filezilla
-  - python3.9
+  - python3
+  - npm
+  - gimp
+  - stacer
+  - mkvtoolnix
+  - ghostwriter
+  #- kloak #Keystroke Anonymization
+  #- firejail #method of sandboxing
 
 apt_signed_repos:
-  - 'deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/docker.asc] https://download.docker.com/linux/ubuntu jammy stable'
   - 'deb [signed-by=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.asc] https://download.vscodium.com/debs vscodium main'
   - 'deb [signed-by=/etc/apt/trusted.gpg.d/signal-desktop-keyring.asc] https://updates.signal.org/desktop/apt xenial main'
   - 'deb [signed-by=/etc/apt/trusted.gpg.d/derivative.asc] https://deb.whonix.org bullseye main contrib non-free'
@@ -80,19 +80,18 @@ flatpak_packages:
   - name: com.github.z.Cumulonimbus
   - name: org.gnome.DejaDup
   - name: io.freetubeapp.FreeTube
-  - name: net.lutris.Lutris
   - name: org.onlyoffice.desktopeditors
   - name: io.github.shiftey.Desktop
   - name: io.gitlab.librewolf-community
   - name: md.obsidian.Obsidian
-  - name: com.zettlr.Zettlr
   - name: com.github.tchx84.Flatseal
   - name: net.cozic.joplin_desktop
-  - name: com.vscodium.codium
-  - name: org.kde.kdenlive
-  - name: org.keepassxc.KeePassXC
+  # - name: com.vscodium.codium
+  # - name: org.kde.kdenlive
+  # - name: org.keepassxc.KeePassXC
   - name: org.kiwix.desktop
   - name: com.calibre_ebook.calibre
+  - name: com.github.johnfactotum.Foliate
 
 # Install snap and and listed packages
 snap_packages:

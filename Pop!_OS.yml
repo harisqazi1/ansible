@@ -1,4 +1,4 @@
-- name: Ubuntu Configuration
+- name: PopOS! Configuration
   hosts: all
   
   vars_files:
@@ -7,9 +7,6 @@
   roles:
     - role: petermosmans.customize-gnome
       tags: ["gnome"]
-    - role: samyroad.ohmyzsh
-      become: true
-      tags: ["ohmyzsh"]
     
   tasks:
     - name: Install apt packages that have keys
@@ -37,11 +34,6 @@
         file: tasks/tor.yml
       tags: ["tor"]
 
-    - name: Install snap packages
-      ansible.builtin.import_tasks:
-        file: tasks/snap.yml
-      tags: ["snap"]
-    
     - name: Install .deb packages
       ansible.builtin.import_tasks:
         file: tasks/deb_packages.yml
@@ -67,12 +59,17 @@
         file: tasks/hardening.yml
       tags: ["hardening"]
 
-    - name: Download dotfiles
+    - name: OhMyZSH + Powerlevel10k
       ansible.builtin.import_tasks:
-        file: tasks/dotfiles.yml
-      tags: ["dotfiles"]
+        file: tasks/ohmyzsh.yml
+      tags: ["post_install"]
 
-    - name: Install cheat
+    - name: Post Install
       ansible.builtin.import_tasks:
-        file: tasks/cheat.yml
-      tags: ["cheat"]
+        file: tasks/post_install.yml
+      tags: ["post_install"]
+
+    - name: Install snap packages
+      ansible.builtin.import_tasks:
+        file: tasks/snap.yml
+      tags: ["snap"]

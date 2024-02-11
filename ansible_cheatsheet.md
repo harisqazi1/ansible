@@ -1,6 +1,6 @@
 # Ansible
 
-I have never personally used Ansible before. I recently was planning on updating my Linux script for speeding up the process for setting up a Pop\_OS! desktop, when I realized that I can learn about Ansible while trying to set it up for my own usage. This post will be my notes I take while learning about the topic. **My configuration is at:** [**https://github.com/harisqazi1/ansible**](https://github.com/harisqazi1/ansible)**.**
+I have never personally used Ansible before. I recently was planning on updating my Linux script for speeding up the process for setting up a Pop\_OS! desktop, when I realized that I can learn about Ansible while trying to set it up for my own usage. This post will be my notes I take while learning about the topic.
 
 ## Notes
 

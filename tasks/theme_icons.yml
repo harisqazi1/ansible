@@ -26,7 +26,7 @@
     dest: "/home/{{ username }}/.themes"
 
 - name: Gsettings for theme
-  ansible.builtin.command: gsettings set org.gnome.shell.extensions.user-theme name "Flat-Remix-Blue-Dark"
+  ansible.builtin.command: gsettings set org.gnome.desktop.interface gtk-theme "Flat-Remix-GTK-Blue"
 
 # Icon
 - name: Create a directory for icons

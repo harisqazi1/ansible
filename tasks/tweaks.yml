@@ -1,5 +1,0 @@
----
-# Other Gsettings based tweaks
-
-- name: Gsettings to make all new windows centered
-  ansible.builtin.command: gsettings set org.gnome.mutter center-new-windows true

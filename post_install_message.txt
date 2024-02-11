@@ -1,0 +1,18 @@
+------------------------
+POST INSTALL TASK LIST
+------------------------
+
+[ ] - Terminal settings
+    [ ] - Make ZSH profile primary
+    [ ] - Uncheck "Use Transparency from system"
+    [ ] - Change color to ~10%
+    [ ] - Change Default color to black
+[ ] - Desktop > Dock > Dock Visibility > Intelligently hide
+[ ] - Update DNS in browsers to custom DNS
+[ ] - NextDNS install on system
+[ ] - In case of bug with gdm to change login screen
+    [ ] - Go into Settings > Devices > Displays; Configure; Save
+    [ ] - sudo cp ~/.config/monitors.xml ~gdm/.config/monitors.xml
+    [ ] - sudo chown gdm:gdm ~gdm/.config/monitors.xml
+    [ ] - Reboot
+[ ] - 

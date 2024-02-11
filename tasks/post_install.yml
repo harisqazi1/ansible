@@ -1,0 +1,4 @@
+---
+- name: Display the Post Installation steps
+  with_file:
+    - "post_install_message.txt" 
