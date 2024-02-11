@@ -59,7 +59,7 @@ Some items in the playbook rely on outside factors, such as links. Here are what
 - [ ] Desktop > Dock > Dock Visibility > Intelligently hide
 - [ ] Update DNS in browsers to custom DNS
 - [ ] NextDNS install on system
-- [ ] ./start-mullvad-browser.desktop --register-app to add mullvad to application list
+- [ ] `./start-mullvad-browser.desktop --register-app` to add mullvad to application list
 - [ ] In case of bug with gdm to change login screen
 	- [ ] Go into Settings > Devices > Displays; Configure; Save
 	- [ ] `sudo cp ~/.config/monitors.xml ~gdm/.config/monitors.xml`
