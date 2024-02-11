@@ -20,43 +20,12 @@ ansible-playbook -i inventory.ini Pop\!_OS.yml -K
 
 I have used some "loop_control"s to give the system some time to release the dpkg locks. It is currently 10 seconds. This will make the playbook take much longer, but it should complete in one run.
 
-## Directory Layout
-
-```
-.
-└── ansible/
-    ├── tasks/ 
-    │   ├── apt_signed.yml
-    │   ├── apt.yml
-    │   ├── brave.yml
-    │   ├── cheat.yml
-    │   ├── deb_packages.yml
-    │   ├── dotfiles.yml
-    │   ├── flatpak.yml
-    │   ├── hardening.yml
-    │   ├── hostname.yml
-    │   ├── npm.yml
-    │   ├── post_install.yml
-    │   ├── snap.yml
-    │   ├── theme_icons.yml
-    │   ├── tor.yml
-    │   └── tweaks.yml
-    ├── LICENSE
-    ├── POP!_OS.yml                 # Main Playbook
-    ├── README.md                   # Readme file
-    ├── config.yml                  # Configuration / Variable file
-    ├── inventory.ini               # Inventory list
-    └── requirements.yml            # Roles used in Playbook
-```
-
 ## Capabilities:
 
 To create this playbook, I referenced Alexander Nabokikh's playbook (https://github.com/AlexNabokikh/ubuntu-playbook/) a good amount. Therefore, it would be unfair if I did not give credit where it is due.
 
 - Install apt packages that are signed (me)
 - Install apt packages (Alexander Nabokikh)
-- Install Brave (can't recall location, but was copied from Ansible Galaxy)
-- Install cheat (me)
 - Install .deb packages from source (me)
 - Download dotfiles (me)
 - Install flatpaks (Alexander Nabokikh)
@@ -75,15 +44,28 @@ Some items in the playbook rely on outside factors, such as links. Here are what
 - tasks/deb_packages.yml - Updating the link for VeraCrypt
 
 ## Post-Install Tasks
-Here are some tasks for me that I would do after this playbook has completed:
-- Run `p10k configure` to configure ohmyzsh
-- Download the archenfox/user.js config for FireFox
-- Update the refresh rate
-- Update DNS in browsers and on the OS
-- Make MPV default video player
-- Move the dock to the left side
-- If you are using two monitors, and if the login page moves over to your secondary monitor
-    - `sudo cp ~/.config/monitors.xml /var/lib/gdm3/.config/`
+[ ] - OhMyZsh Install
+    [ ] - sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    [ ] - git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    [ ] - git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    [ ] - git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    [ ] - ZSH_THEME="powerlevel10k/powerlevel10k" in ~/.zshrc
+    [ ] - plugins=( git zsh-syntax-highlighting zsh-autosuggestions ) in ~/.zshrc
+[ ] - Terminal settings
+    [ ] - Make ZSH profile primary
+    [ ] - Uncheck "Use Transparency from system"
+    [ ] - Change color to ~10%
+    [ ] - Change Default color to black
+[ ] - Desktop > Dock > Dock Visibility > Intelligently hide
+[ ] - Update DNS in browsers to custom DNS
+[ ] - NextDNS install on system
+[ ] - ./start-mullvad-browser.desktop --register-app to add mullvad to application list
+[ ] - In case of bug with gdm to change login screen
+    [ ] - Go into Settings > Devices > Displays; Configure; Save
+    [ ] - sudo cp ~/.config/monitors.xml ~gdm/.config/monitors.xml
+    [ ] - sudo chown gdm:gdm ~gdm/.config/monitors.xml
+    [ ] - Reboot
+
 
 ## Sources:
 - https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html

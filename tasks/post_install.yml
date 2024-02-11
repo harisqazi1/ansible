@@ -1,3 +1,0 @@
----
-- name: Read post install file
-  ansible.builtin.shell: 'cat post_install_message.txt'

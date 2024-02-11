@@ -54,11 +54,6 @@
         file: tasks/hardening.yml
       tags: ["hardening"]
 
-    - name: Post Install
-      ansible.builtin.import_tasks:
-        file: tasks/post_install.yml
-      tags: ["post_install"]
-
     - name: Tweaks
       ansible.builtin.import_tasks:
         file: tasks/tweaks.yml
