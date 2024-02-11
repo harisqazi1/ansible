@@ -15,6 +15,9 @@
   when: snap_packages is defined
 
 # Link your snap .desktop folder inside one of your user or system .desktop folders
-- name: Show Snap packages in launcher
-  become: true
-  ansible.builtin.shell: ln -s /var/lib/snapd/desktop/applications ~/.local/share/applications/snap
+- name: Show snaps in Application list
+  ansible.builtin.file:
+    src: /var/lib/snapd/desktop/applications
+    dest: /home/{{ username }}/.local/share/applications/snap
+    state: link
+    become: true

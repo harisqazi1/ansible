@@ -56,6 +56,7 @@ apt_packages:
   - mat2
   - filezilla
   - python3
+  - python3-pip
   - npm
   - gimp
   - stacer

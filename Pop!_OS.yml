@@ -59,15 +59,15 @@
         file: tasks/hardening.yml
       tags: ["hardening"]
 
-    - name: OhMyZSH + Powerlevel10k
-      ansible.builtin.import_tasks:
-        file: tasks/ohmyzsh.yml
-      tags: ["post_install"]
-
     - name: Post Install
       ansible.builtin.import_tasks:
         file: tasks/post_install.yml
       tags: ["post_install"]
+
+    - name: Tweaks
+      ansible.builtin.import_tasks:
+        file: tasks/tweaks.yml
+      tags: ["tweaks"]
 
     - name: Install snap packages
       ansible.builtin.import_tasks:
