@@ -1,4 +1,3 @@
 ---
-- name: Display the Post Installation steps
-  with_file:
-    - "post_install_message.txt" 
+- name: Read post install file
+  ansible.builtin.shell: 'cat post_install_message.txt'
