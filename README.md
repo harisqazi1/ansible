@@ -27,20 +27,18 @@ To create this playbook, I referenced Alexander Nabokikh's playbook (https://git
 - Install apt packages that are signed (me)
 - Install apt packages (Alexander Nabokikh)
 - Install .deb packages from source (me)
-- Download dotfiles (me)
 - Install flatpaks (Alexander Nabokikh)
 - Hardening the OS a bit (me)
 - Modify the hostname (Alexander Nabokikh)
 - Install npm packages (Alexander Nabokikh)
 - Install snap packages (Alexander Nabokikh)
 - Installing a theme and the icon pack (me)
-- Downloading TOR from source (me)
+- Downloading TOR and Mullvad Browser from source (me)
 - Tweaking Gnome with Gsettings (me)
 
 ## Maintenance:
 Some items in the playbook rely on outside factors, such as links. Here are what is needed to be maintained for the playbook to work as expected.
 - tasks/tor.yml - Updating the link for TOR
-- tasks/cheat.yml - Updating the link for cheat
 - tasks/deb_packages.yml - Updating the link for VeraCrypt
 
 ## Post-Install Tasks
