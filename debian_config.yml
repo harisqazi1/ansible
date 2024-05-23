@@ -1,0 +1,126 @@
+---
+# Variable file
+username: "{{ lookup('env', 'USER') }}"
+custom_hostname: localhost
+
+#Check these variables for version updates
+freefilesync_file_ver: "FreeFileSync_13.6_Linux.tar.gz"
+veracrypt_file_ver: "veracrypt-1.26.7-Debian-12-amd64.deb"
+
+# Gnome 
+gtk_version: 3.0
+gnome_user: "{{ lookup('env', 'USER') }}"
+gnome_extensions:
+  - id: 906 # Sound Input & Output Device Chooser
+    enable: true
+  - id: 19 # User Themes 
+    enable: true
+gnome_gsettings:
+  - schema: org.gnome.desktop.wm.preferences
+    key: button-layout
+    value: ":minimize,maximize,close"
+  - schema: org.gnome.mutter
+    key: center-new-windows
+    value: true
+
+# Apt packages
+apt_packages:
+  - akregator
+  - apt-transport-https
+  - bashtop
+  - bleachbit
+  - # borgbackup
+  - btop
+  - cherrytree
+  - chkrootkit
+  - clamav
+  - cmake
+  - codium
+  - curl
+  - dvipng
+  - ffmpeg
+  - filezilla
+  - firefox
+  - firefox-esr
+  #- firejail #method of sandboxing
+  - firmware-iwlwifi
+  - firmware-misc-nonfree
+  - flameshot
+  - flatpak
+  - ghostwriter
+  - gimp
+  - git
+  - gnome-tweaks
+  - htop
+  - iftop
+  - kdenlive
+  - keepassxc
+  - kid3
+  - kloak #Keystroke Anonymization
+  - libreoffice
+  - linux-headers-amd64
+  - lynis
+  - mat2
+  - mkvtoolnix
+  - mpv
+  - neofetch
+  - network-manager
+  - network-manager-gnome
+  - npm
+  - nvidia-driver
+  - nvtop
+  - obs-studio
+  - plantuml   #creation of a wide array of diagrams
+  - polybar  - #Create Status Bars
+  - python3
+  - python3-pip
+  - qbittorrent
+  - rhythmbox
+  - ripgrep
+  - rkhunter
+  - signal-desktop
+  - snapd
+  - stacer
+  - terminator
+  - unzip
+  - variety
+  - virtualbox
+  - vlc
+  - wget
+  - zsh
+
+apt_signed_repos:
+  - 'deb [signed-by=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.asc] https://download.vscodium.com/debs vscodium main'
+  - 'deb [signed-by=/etc/apt/trusted.gpg.d/signal-desktop-keyring.asc] https://updates.signal.org/desktop/apt xenial main'
+  - 'deb [signed-by=/etc/apt/trusted.gpg.d/derivative.asc] https://deb.whonix.org bullseye main contrib non-free'
+
+# Install flatpak and listed packages
+flatpak_packages:
+  - name: com.calibre_ebook.calibre
+  - name: com.github.johnfactotum.Foliate
+  - name: com.github.tchx84.Flatseal
+  - name: com.github.z.Cumulonimbus
+  - name: com.vscodium.codium
+  - name: io.freetubeapp.FreeTube
+  - name: io.github.shiftey.Desktop
+  - name: io.gitlab.librewolf-community
+  - name: md.obsidian.Obsidian
+  - name: net.cozic.joplin_desktop
+  - name: org.gnome.DejaDup
+  - name: org.kde.kdenlive
+  - name: org.keepassxc.KeePassXC
+  - name: org.kiwix.desktop
+  - name: org.onlyoffice.desktopeditors
+
+# Install snap and and listed packages
+snap_packages:
+  - name: bitwarden
+  - name: authy
+  - name: postman
+
+npm_packages:
+  - name: n
+
+#currently missing apps
+#ProtonVPN | VeraCrypt | brave | TOR | Lynis 
+#Issues - bitwarden not installed properly

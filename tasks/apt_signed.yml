@@ -1,0 +1,42 @@
+---
+# VSCodium
+- name: Add VSCodium apt repository key
+  ansible.builtin.get_url:
+    url: "https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg"
+    dest: /etc/apt/trusted.gpg.d/vscodium-archive-keyring.asc
+    mode: '0644'
+    force: true
+  become: true
+
+# Signal
+- name: Add Signal apt repository key
+  ansible.builtin.get_url:
+    url: "https://updates.signal.org/desktop/apt/keys.asc"
+    dest: /etc/apt/trusted.gpg.d/signal-desktop-keyring.asc
+    mode: '0644'
+    force: true
+  become: true
+
+# Whonix
+- name: Add Whonix apt repository key
+  ansible.builtin.get_url:
+    url: "https://www.whonix.org/keys/derivative.asc"
+    dest: /etc/apt/trusted.gpg.d/derivative.asc
+    mode: '0644'
+    force: true
+  become: true
+
+# Adding all aforementioned repositories into sources list
+- name: Add repositories into sources list
+  ansible.builtin.apt_repository:
+    repo: "{{ item }}"
+    state: present
+    update_cache: true
+  become: true
+  loop: "{{ apt_signed_repos }}"
+  loop_control:
+    pause: 10 # 10 second pause - 5 seemed to be a bit less
+  when:
+    - apt_signed_repos is defined
+    - apt_signed_repos is iterable
+    - apt_signed_repos | length > 0

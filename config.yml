@@ -1,0 +1,108 @@
+---
+# Variable file
+username: "{{ lookup('env', 'USER') }}"
+
+custom_hostname: localhost
+
+# Gnome 
+gtk_version: 3.0
+gnome_user: "{{ lookup('env', 'USER') }}"
+gnome_extensions:
+  - id: 906 # Sound Input & Output Device Chooser
+    enable: true
+  - id: 19 # User Themes 
+    enable: true
+gnome_gsettings:
+  - schema: org.gnome.desktop.wm.preferences
+    key: button-layout
+    value: ":minimize,maximize,close"
+  - schema: org.gnome.mutter
+    key: center-new-windows
+    value: true
+  - schema: org.gnome.shell.extensions.dash-to-dock
+    key: dock-position
+    value: "LEFT"
+
+# Apt packages
+apt_packages:
+  - apt-transport-https
+  - codium
+  - signal-desktop
+  - gnome-tweaks
+  - firefox
+  - zsh
+  - htop
+  - terminator
+  - btop
+  - nvtop
+  - bashtop
+  - iftop
+  - keepassxc
+  - libreoffice
+  - qbittorrent
+  - vlc
+  - mpv
+  - bleachbit
+  - flameshot
+  - kid3
+  - obs-studio
+  - rhythmbox
+  - variety
+  - virtualbox
+  - neofetch
+  - kdenlive
+  - akregator
+  - cherrytree
+  - clamav
+  - lynis
+  - chkrootkit
+  - rkhunter
+  - curl
+  - snapd
+  - mat2
+  - filezilla
+  - python3
+  - python3-pip
+  - npm
+  - gimp
+  - stacer
+  - mkvtoolnix
+  - ghostwriter
+  #- kloak #Keystroke Anonymization
+  #- firejail #method of sandboxing
+
+apt_signed_repos:
+  - 'deb [signed-by=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.asc] https://download.vscodium.com/debs vscodium main'
+  - 'deb [signed-by=/etc/apt/trusted.gpg.d/signal-desktop-keyring.asc] https://updates.signal.org/desktop/apt xenial main'
+  - 'deb [signed-by=/etc/apt/trusted.gpg.d/derivative.asc] https://deb.whonix.org bullseye main contrib non-free'
+
+# Install flatpak and listed packages
+flatpak_packages:
+  - name: com.github.z.Cumulonimbus
+  - name: org.gnome.DejaDup
+  - name: io.freetubeapp.FreeTube
+  - name: org.onlyoffice.desktopeditors
+  - name: io.github.shiftey.Desktop
+  - name: io.gitlab.librewolf-community
+  - name: md.obsidian.Obsidian
+  - name: com.github.tchx84.Flatseal
+  - name: net.cozic.joplin_desktop
+  # - name: com.vscodium.codium
+  # - name: org.kde.kdenlive
+  # - name: org.keepassxc.KeePassXC
+  - name: org.kiwix.desktop
+  - name: com.calibre_ebook.calibre
+  - name: com.github.johnfactotum.Foliate
+
+# Install snap and and listed packages
+snap_packages:
+  - name: bitwarden
+  - name: authy
+  - name: postman
+
+npm_packages:
+  - name: n
+
+#currently missing apps
+#ProtonVPN | VeraCrypt | brave | TOR | Lynis 
+#Issues - bitwarden not installed properly

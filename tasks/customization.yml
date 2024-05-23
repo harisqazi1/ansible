@@ -1,0 +1,53 @@
+---
+# Install Flat Remix GNOME theme & Candy Icons
+
+# Theme
+- name: Create the theme directory (locally)
+  ansible.builtin.file:
+    path: "/home/{{ username }}/.themes"
+    state: directory
+    mode: '0755'
+
+## Dracula Theme
+- name: Download Dracula GTK Theme
+  ansible.builtin.unarchive:
+    src: 'https://github.com/dracula/gtk/releases/latest/download/Dracula.tar.xz'
+    dest: "/home/{{ username }}/.themes/"
+    remote_src: yes
+
+- name: Gsettings for theme (interface)
+  ansible.builtin.command: gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
+
+- name: Gsettings for theme (WM Preference)
+  ansible.builtin.command: gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
+
+# Icon
+- name: Create the icon directory (locally)
+  ansible.builtin.file:
+    path: "/home/{{ username }}/.icons"
+    state: directory
+    mode: '0755'
+
+- name: Download Candy Icons
+  ansible.builtin.unarchive:
+    src: 'https://github.com/EliverLara/candy-icons/archive/refs/heads/master.zip'
+    dest: "/home/{{ username }}/.icons/"
+    remote_src: yes
+
+- name: Gsettings for icons
+  ansible.builtin.command: gsettings set org.gnome.desktop.interface icon-theme candy-icons
+
+# Font
+- name: Create .fonts Directory 
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.fonts"
+    state: directory
+
+- name: Download FiraCode Nerd Font
+  ansible.builtin.unarchive:
+    src: https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+    dest: "{{ lookup('env', 'HOME') }}/.fonts/"
+    remote_src: yes
+
+- name: Fonts Cache Reload
+  ansible.builtin.command: fc-cache -f
