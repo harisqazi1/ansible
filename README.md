@@ -1,8 +1,45 @@
 # Ansible Playbooks
 
-## Linux (Pop!_OS)
+## Debian + Kicksecure
 
-### Installing Ansible and Running the Playbook:
+### Installing Ansible and Running the Debian + Kicksecure  Playbook
+
+The initial steps are for a user who wants to have the user account not have sudo access, and instead give sudo access to another user as a safety precaution.
+
+For better security follow the following when Installind Debian:
+
+- Set username to `user` to make it generic
+- Set password to a 3+ word passphrase
+- Set hostname to `localhost`, again to make it generic
+- As the Ansible playbook is meant for Gnome, make sure to install Gnome
+- Enable Full Disk Encryption (Encrypted LVM volume)
+
+```bash
+# Add /sbin to path to include its binaries in command line
+export PATH=/sbin:$PATH
+# Create Admin User - this user will have sudo access, and user will not
+## -m creates home; -p for password
+useradd -m -p [password_here] admin
+# change to admin account (enter admin password when prompted)
+su admin
+# Run the regular steps for Ansible
+# Install Ansible
+sudo apt install ansible
+# Download this repository
+git clone https://github.com/harisqazi1/ansible.git
+# Change Directory into the repo
+cd ansible
+# Install Roles from Ansible Galaxy
+ansible-galaxy install -r requirements.yml
+# Run the playbook
+ansible-playbook -i inventory.ini Debian.yml -K 
+#Reboot to finalize changes
+reboot now
+```
+
+## Pop!_OS
+
+### Installing Ansible and Running the Pop!_OS Playbook:
 
 ```bash
 # Install Ansible
@@ -88,3 +125,4 @@ Some items in the playbook rely on outside factors, such as links. Here are what
 - https://stackoverflow.com/questions/47994497/how-to-pipe-commands-using-ansible-e-g-curl-sl-host-com-sudo-bash
 - https://serverfault.com/questions/939671/ansible-expect-is-not-sending-response
 - https://dev.to/waylonwalker/installing-system-nerd-fonts-with-ansible-35kh
+- https://www.cyberciti.biz/tips/howto-write-shell-script-to-add-user.html

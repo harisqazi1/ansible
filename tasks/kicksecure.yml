@@ -1,1 +1,94 @@
 ---
+# Prerequisites
+- name: Apt Update
+  ansible.builtin.apt:
+    update_cache: yes
+  become: true
+
+- name: Apt Full-Upgrade
+  ansible.builtin.apt: upgrade=full
+  become: true
+
+# Didn't include the --no-install-recommends here - couldn't find option for it other than ansible.builtin.shell module
+## apt install --no-install-recommends sudo adduser
+- name: Install sudo and adduser
+  ansible.builtin.apt:
+    pkg:
+    - sudo
+    - adduser
+    state: present
+  become: true
+
+- name: Execute the command in remote shell; stdout goes to the specified file on the remote
+  ansible.builtin.shell: export PATH=/sbin:$PATH
+
+- name: Ensure group "console" exists
+  ansible.builtin.group:
+    name: console
+    state: present
+    system: true
+  become: true
+
+# Two steps more: adding user and then adding them to groups sudo and admin
+- name: Add a kicksecure user 
+  ansible.builtin.user:
+    name: {{ username }}
+    group: 
+    - sudo
+    - console
+  become: true
+
+## Steps mention to reboot, I reboot manually at the end
+
+# Installation
+- name: Install extrepo
+  ansible.builtin.apt:
+    name: extrepo
+    state: present
+  become: true
+
+- name: Execute the command in remote shell; stdout goes to the specified file on the remote
+  ansible.builtin.shell: extrepo enable kicksecure
+  become: true
+
+- name: Apt Update
+  ansible.builtin.apt:
+    update_cache: yes
+  become: true
+
+- name: Apt Full-Upgrade
+  ansible.builtin.apt: upgrade=full
+  become: true
+
+- name: Install kicksecure-cli-host
+  ansible.builtin.apt:
+    name: kicksecure-cli-host
+    state: present
+  become: true
+
+# Post-Installation
+- name: Enable the /etc/apt/sources.list.d/derivative.list Kicksecure APT repository
+  ansible.builtin.shell: repository-dist --enable --repository stable
+  become: true
+
+- name: Disable the extrepo kicksecure APT repository
+  ansible.builtin.shell: extrepo disable kicksecure
+  become: true
+
+- name: Copy sources.list with owner and permissions
+  ansible.builtin.copy:
+    src: /etc/apt/sources.list
+    dest: /home/{{ username }}/sources.list.bak
+  become: true
+
+- name: Remove sources.list
+  ansible.builtin.file:
+    path: /etc/apt/sources.list
+    state: absent
+  become: true
+
+- name: Touch sources.list 
+  ansible.builtin.file:
+    path: /etc/apt/sources.list
+    state: touch
+  become: true

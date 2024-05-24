@@ -1,4 +1,0 @@
----
-- name: Change machine-id to whonix machine-id
-  become: true
-  ansible.builtin.shell: "echo \"b08dfa6083e7567a1921a715000001fb\" | sudo tee /etc/machine-id"

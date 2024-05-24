@@ -39,11 +39,6 @@
         file: tasks/npm.yml
       tags: ["npm"]
     
-    - name: Modify the hostname
-      ansible.builtin.import_tasks:
-        file: tasks/hostname.yml
-      tags: ["hostname"]
-    
     - name: Install Theme and Icons
       ansible.builtin.import_tasks:
         file: tasks/customization.yml
@@ -58,3 +53,8 @@
       ansible.builtin.import_tasks:
         file: tasks/snap.yml
       tags: ["snap"]
+
+    - name: Install Kicksecure
+      ansible.builtin.import_tasks:
+        file: tasks/kicksecure.yml
+      tags: ["kicksecure"]

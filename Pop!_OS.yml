@@ -39,20 +39,10 @@
         file: tasks/npm.yml
       tags: ["npm"]
     
-    - name: Modify the hostname
-      ansible.builtin.import_tasks:
-        file: tasks/hostname.yml
-      tags: ["hostname"]
-    
     - name: Install Theme and Icons
       ansible.builtin.import_tasks:
         file: tasks/customization.yml
       tags: ["theme_icons"]
-
-    - name: Pop!_OS Hardening
-      ansible.builtin.import_tasks:
-        file: tasks/hardening.yml
-      tags: ["hardening"]
 
     - name: Tweaks
       ansible.builtin.import_tasks:

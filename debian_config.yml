@@ -29,7 +29,7 @@ apt_packages:
   - apt-transport-https
   - bashtop
   - bleachbit
-  - # borgbackup
+  #- borgbackup
   - btop
   - cherrytree
   - chkrootkit
