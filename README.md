@@ -17,14 +17,20 @@ For better security follow the following when Installing Debian:
 ```bash
 # Add /sbin to path to include its binaries in command line
 export PATH=/sbin:$PATH
+# Switch to root to add the admin user - default user is not in sudoers
+su root #su without a user assumes root, so just `su` can work too
 # Create Admin User - this user will have sudo access, and user will not
-## -m creates home; -p for password
-useradd -m -p [password_here] admin
+## -m creates home; -s gives the user a shell; -G to group 
+useradd -m -s /bin/bash -G sudo admin
+# change admin password
+passwd admin
 # change to admin account (enter admin password when prompted)
 su admin
+# change to Admin home directory
+cd /home/admin
 # Run the regular steps for Ansible
-# Install Ansible
-sudo apt install ansible
+# Install git and Ansible
+sudo apt install git ansible -y
 # Download this repository
 git clone https://github.com/harisqazi1/ansible.git
 # Change Directory into the repo
@@ -43,7 +49,7 @@ reboot now
 
 ```bash
 # Install Ansible
-sudo apt install ansible
+sudo apt install ansible -y
 # Download this repository
 git clone https://github.com/harisqazi1/ansible.git
 # Change Directory into the repo

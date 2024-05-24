@@ -51,3 +51,25 @@
 
 - name: Fonts Cache Reload
   ansible.builtin.command: fc-cache -f
+
+- name: Download tor
+  ansible.builtin.get_url:
+    url: "{{ tor_download_link }}"
+    dest: "/home/{{ username }}/Downloads/"
+
+- name: Unarchive the tor zip
+  ansible.builtin.unarchive:
+    src: "/home/{{ username }}/Downloads/tor-browser-linux-x86_64-13.0.8.tar.xz"
+    dest: "/home/{{ username }}/Downloads/"
+    remote_src: yes
+
+- name: Download Mullvad Browser
+  ansible.builtin.get_url:
+    url: https://mullvad.net/en/download/browser/linux-x86_64/latest
+    dest: "/home/{{ username }}/Downloads/"
+
+- name: Unarchive Mullvad Browser
+  ansible.builtin.unarchive:
+    src: "/home/{{ username }}/Downloads/{{ mullvad_browser_ver }}"
+    dest: "/home/{{ username }}/Downloads/"
+    remote_src: yes
