@@ -6,7 +6,7 @@
 
 The initial steps are for a user who wants to have the user account not have sudo access, and instead give sudo access to another user as a safety precaution.
 
-For better security follow the following when Installind Debian:
+For better security follow the following when Installing Debian:
 
 - Set username to `user` to make it generic
 - Set password to a 3+ word passphrase
@@ -78,7 +78,7 @@ Some items in the playbook rely on outside factors, such as links. Here are what
 - tasks/tor.yml - Updating the link for TOR
 - tasks/deb_packages.yml - Updating the link for VeraCrypt
 
-## Post-Install Tasks
+## Post-Install Tasks for both playbooks
 - [ ] OhMyZsh Install
 	- [ ] `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 	- [ ] `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
@@ -91,6 +91,7 @@ Some items in the playbook rely on outside factors, such as links. Here are what
 	- [ ] Uncheck "Use Transparency from system"
 	- [ ] Change color to ~10%
 	- [ ] Change Default color to black
+- [ ] Starship setup with https://starship.rs/presets/tokyo-night Preset
 - [ ] Desktop > Dock > Dock Visibility > Intelligently hide
 - [ ] Update DNS in browsers to custom DNS
 - [ ] NextDNS install on system

@@ -82,6 +82,8 @@ apt_packages:
   - snapd
   - stacer
   - terminator
+  - tomb
+  - macchanger
   - unzip
   - variety
   - virtualbox
