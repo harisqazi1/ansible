@@ -19,7 +19,7 @@
     state: present
   become: true
 
-- name: Execute the command in remote shell; stdout goes to the specified file on the remote
+- name: Export /sbin to $PATH
   ansible.builtin.shell: export PATH=/sbin:$PATH
 
 - name: Ensure group "console" exists
@@ -46,7 +46,7 @@
     state: present
   become: true
 
-- name: Execute the command in remote shell; stdout goes to the specified file on the remote
+- name: Enable kicksecure repo
   ansible.builtin.shell: extrepo enable kicksecure
   become: true
 

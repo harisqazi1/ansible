@@ -35,12 +35,6 @@ cd ansible
 ansible-galaxy install -r requirements.yml
 # Run the playbook
 ansible-playbook -i inventory.ini Debian.yml -K 
-# Change to root to remove user from sudoers
-su root 
-# Remove user from sudoers
-sudo visudo
-# Remove from sudo group
-deluser user sudo
 #Reboot to finalize changes
 reboot
 ```
