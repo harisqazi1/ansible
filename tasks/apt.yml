@@ -21,7 +21,7 @@
     state: latest
   loop: "{{ apt_packages }}"
   loop_control:
-    pause: 7 # 7 second pause - 5 seemed to be a bit less
+    pause: 5 # 7 second pause - 5 seemed to be a bit less
   register: install_result
   when: apt_packages is defined
 

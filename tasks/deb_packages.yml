@@ -23,7 +23,7 @@
     url: "https://github.com/fastfetch-cli/fastfetch/releases/latest/download/fastfetch-linux-amd64.deb"
     dest: "/home/{{ username }}/Downloads/debian/fastfetch-linux-amd64.deb"
 
-- name: Install VeraCrypt .deb package
+- name: Install Fastfetch .deb package
   apt:
     deb: "/home/{{ username }}/Downloads/debian/fastfetch-linux-amd64.deb"
   become: yes
@@ -40,10 +40,10 @@
     url: "https://freefilesync.org/download/{{ freefilesync_file_ver }}"
     dest: "/home/{{ username }}/Downloads/FreeFileSync/{{ freefilesync_file_ver }}"
 
-- name: Extract FreeFileSync Installer into /Downloads/FreeFileSync
+- name: Extract FreeFileSync Installer into /Downloads
   ansible.builtin.unarchive:
     src: "/home/{{ username }}/Downloads/FreeFileSync/{{ freefilesync_file_ver }}"
-    dest: /Downloads/FreeFileSync/FreeFileSync_Linux
+    dest: "/home/{{ username }}/Downloads/FreeFileSync"
 
 
 - name: Removing debian directory (clean-up)

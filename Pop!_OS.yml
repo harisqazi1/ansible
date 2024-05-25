@@ -23,11 +23,6 @@
       ansible.builtin.import_tasks:
         file: tasks/flatpak.yml
       tags: ["flatpak"]
-    
-    - name: "Install the tor browser in /home/{{ username }}/Downloads/"
-      ansible.builtin.import_tasks:
-        file: tasks/tor.yml
-      tags: ["tor"]
 
     - name: Install .deb packages
       ansible.builtin.import_tasks:
@@ -42,12 +37,7 @@
     - name: Install Theme and Icons
       ansible.builtin.import_tasks:
         file: tasks/customization.yml
-      tags: ["theme_icons"]
-
-    - name: Tweaks
-      ansible.builtin.import_tasks:
-        file: tasks/tweaks.yml
-      tags: ["tweaks"]
+      tags: ["customization"]
 
     - name: Install snap packages
       ansible.builtin.import_tasks:

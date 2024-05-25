@@ -9,25 +9,20 @@
       tags: ["gnome"]
     
   tasks:
-    - name: Install apt packages that have keys
+    - name: Install Apt packages that have keys
       ansible.builtin.import_tasks:
         file: tasks/apt_signed.yml
       tags: ["apt_signed"]
 
-    - name: Install apt packages
+    - name: Install Apt packages
       ansible.builtin.import_tasks:
         file: tasks/apt.yml
       tags: ["apt"]
 
-    - name: Install flatpak packages
+    - name: Install Flatpak packages
       ansible.builtin.import_tasks:
         file: tasks/flatpak.yml
       tags: ["flatpak"]
-    
-    - name: "Install the tor browser in /home/{{ username }}/Downloads/"
-      ansible.builtin.import_tasks:
-        file: tasks/tor.yml
-      tags: ["tor"]
 
     - name: Install .deb packages
       ansible.builtin.import_tasks:
@@ -39,17 +34,12 @@
         file: tasks/npm.yml
       tags: ["npm"]
     
-    - name: Install Theme and Icons
+    - name: Install Theme, Font, Icons, and Browsers
       ansible.builtin.import_tasks:
         file: tasks/customization.yml
-      tags: ["theme_icons"]
+      tags: ["customization"]
 
-    - name: Tweaks
-      ansible.builtin.import_tasks:
-        file: tasks/tweaks.yml
-      tags: ["tweaks"]
-
-    - name: Install snap packages
+    - name: Install Snap packages
       ansible.builtin.import_tasks:
         file: tasks/snap.yml
       tags: ["snap"]

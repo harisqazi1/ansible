@@ -32,7 +32,7 @@
 # Two steps more: adding user and then adding them to groups sudo and admin
 - name: Add a kicksecure user 
   ansible.builtin.user:
-    name: {{ username }}
+    name: "{{ username }}"
     group: 
     - sudo
     - console
@@ -78,7 +78,7 @@
 - name: Copy sources.list with owner and permissions
   ansible.builtin.copy:
     src: /etc/apt/sources.list
-    dest: /home/{{ username }}/sources.list.bak
+    dest: "/home/{{ username }}/sources.list.bak"
   become: true
 
 - name: Remove sources.list

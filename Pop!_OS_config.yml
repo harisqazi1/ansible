@@ -74,7 +74,6 @@ apt_packages:
 apt_signed_repos:
   - 'deb [signed-by=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.asc] https://download.vscodium.com/debs vscodium main'
   - 'deb [signed-by=/etc/apt/trusted.gpg.d/signal-desktop-keyring.asc] https://updates.signal.org/desktop/apt xenial main'
-  - 'deb [signed-by=/etc/apt/trusted.gpg.d/derivative.asc] https://deb.whonix.org bullseye main contrib non-free'
 
 # Install flatpak and listed packages
 flatpak_packages:
@@ -102,7 +101,3 @@ snap_packages:
 
 npm_packages:
   - name: n
-
-#currently missing apps
-#ProtonVPN | VeraCrypt | brave | TOR | Lynis 
-#Issues - bitwarden not installed properly

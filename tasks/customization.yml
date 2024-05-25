@@ -40,13 +40,13 @@
 # Font
 - name: Create .fonts Directory 
   file:
-    path: "{{ lookup('env', 'HOME') }}/.fonts"
+    path: "{{ username }}/.fonts"
     state: directory
 
 - name: Download FiraCode Nerd Font
   ansible.builtin.unarchive:
     src: https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
-    dest: "{{ lookup('env', 'HOME') }}/.fonts/"
+    dest: "{{ username }}/.fonts/"
     remote_src: yes
 
 - name: Fonts Cache Reload

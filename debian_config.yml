@@ -1,6 +1,7 @@
 ---
 # Variable file
-username: "{{ lookup('env', 'USER') }}"
+# username: "{{ lookup('env', 'USER') }}" #Uncomment if the user you run it as has root access
+username: "user"
 custom_hostname: localhost
 
 #Check these variables for version updates
@@ -29,7 +30,6 @@ gnome_gsettings:
 apt_packages:
   - akregator
   - apt-transport-https
-  - bashtop
   - bleachbit
   #- borgbackup
   - btop
@@ -58,7 +58,7 @@ apt_packages:
   - kdenlive
   - keepassxc
   - kid3
-  - kloak #Keystroke Anonymization
+  #- kloak #Keystroke Anonymization - Installed in Kicksecure, I think
   - libreoffice
   - linux-headers-amd64
   - lynis
@@ -96,7 +96,6 @@ apt_packages:
 apt_signed_repos:
   - 'deb [signed-by=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.asc] https://download.vscodium.com/debs vscodium main'
   - 'deb [signed-by=/etc/apt/trusted.gpg.d/signal-desktop-keyring.asc] https://updates.signal.org/desktop/apt xenial main'
-  - 'deb [signed-by=/etc/apt/trusted.gpg.d/derivative.asc] https://deb.whonix.org bullseye main contrib non-free'
 
 # Install flatpak and listed packages
 flatpak_packages:
@@ -124,7 +123,3 @@ snap_packages:
 
 npm_packages:
   - name: n
-
-#currently missing apps
-#ProtonVPN | VeraCrypt | brave | TOR | Lynis 
-#Issues - bitwarden not installed properly
