@@ -19,6 +19,8 @@ For better security follow the following when Installing Debian:
 export PATH=/sbin:$PATH
 # User does not have sudo access, so switch to root
 su root #`su` could be used, as it assumes root by default
+# Adduser to sudo group
+adduser user sudo
 # Manually add user to sudo group (sudoers) by adding them under root and copying the same permissions as root
 sudo visudo 
 # Exit from root
@@ -37,8 +39,10 @@ ansible-playbook -i inventory.ini Debian.yml -K
 su root 
 # Remove user from sudoers
 sudo visudo
+# Remove from sudo group
+deluser user sudo
 #Reboot to finalize changes
-reboot now
+reboot
 ```
 
 ## Pop!_OS
