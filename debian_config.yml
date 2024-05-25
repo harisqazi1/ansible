@@ -1,7 +1,6 @@
 ---
 # Variable file
-# username: "{{ lookup('env', 'USER') }}" #Uncomment if the user you run it as has root access
-username: "user"
+username: "{{ lookup('env', 'USER') }}" #Uncomment if the user you run it as has root access
 custom_hostname: localhost
 
 #Check these variables for version updates
