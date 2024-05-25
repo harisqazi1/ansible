@@ -17,7 +17,12 @@ For better security follow the following when Installing Debian:
 ```bash
 # Add /sbin to path to include its binaries in command line
 export PATH=/sbin:$PATH
-# Run the regular steps for Ansible
+# User does not have sudo access, so switch to root
+su root #`su` could be used, as it assumes root by default
+# Manually add user to sudo group (sudoers) by adding them under root and copying the same permissions as root
+sudo visudo 
+# Exit from root
+exit
 # Install git and Ansible
 sudo apt install git ansible -y
 # Download this repository
@@ -28,9 +33,12 @@ cd ansible
 ansible-galaxy install -r requirements.yml
 # Run the playbook
 ansible-playbook -i inventory.ini Debian.yml -K 
+# Change to root to remove user from sudoers
+su root 
+# Remove user from sudoers
+sudo visudo
 #Reboot to finalize changes
 reboot now
-#if user is in sudoers - remove them from it as a safety precaution preventing sudo as privesc
 ```
 
 ## Pop!_OS

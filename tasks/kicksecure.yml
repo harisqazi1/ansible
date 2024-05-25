@@ -30,12 +30,11 @@
   become: true
 
 # Two steps more: adding user and then adding them to groups sudo and admin
-- name: Add a kicksecure user 
+- name: Add the user to sudo and console groups
   ansible.builtin.user:
     name: "{{ username }}"
-    group: 
-    - sudo
-    - console
+    groups: sudo,console
+    append: yes
   become: true
 
 ## Steps mention to reboot, I reboot manually at the end

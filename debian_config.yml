@@ -1,12 +1,13 @@
 ---
 # Variable file
-username: "{{ lookup('env', 'USER') }}" #Uncomment if the user you run it as has root access
+username: "{{ lookup('env', 'USER') }}"
 custom_hostname: localhost
 
 #Check these variables for version updates
 freefilesync_file_ver: "FreeFileSync_13.6_Linux.tar.gz"
 veracrypt_file_ver: "veracrypt-1.26.7-Debian-12-amd64.deb"
 tor_download_link: "https://www.torproject.org/dist/torbrowser/13.0.15/tor-browser-linux-x86_64-13.0.15.tar.xz"
+tor_file_ver: "tor-browser-linux-x86_64-13.0.15.tar.xz"
 mullvad_browser_ver: "mullvad-browser-linux-x86_64-13.0.15.tar.xz"
 
 # Gnome 
