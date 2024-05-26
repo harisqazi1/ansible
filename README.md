@@ -17,6 +17,8 @@ For better security follow the following when Installing Debian:
 ```bash
 # Add /sbin to path to include its binaries in command line
 export PATH=/sbin:$PATH
+# Source the profile for the environment for previous export to be permanent
+source ~/.profile
 # User does not have sudo access, so switch to root
 su root #`su` could be used, as it assumes root by default
 # Adduser to sudo group
@@ -35,6 +37,8 @@ cd ansible
 ansible-galaxy install -r requirements.yml
 # Run the playbook
 ansible-playbook -i inventory.ini Debian.yml -K 
+# Manually remove user to sudo group (sudoers) added manually before
+sudo visudo
 #Reboot to finalize changes
 reboot
 ```
