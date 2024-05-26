@@ -81,28 +81,27 @@ Some items in the playbook rely on outside factors, such as links. Here are what
 - tasks/deb_packages.yml - Updating the link for VeraCrypt
 
 ## Post-Install Tasks for both playbooks
-- [ ] OhMyZsh Install
-	- [ ] `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-	- [ ] `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
-	- [ ] `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
-	- [ ] `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
-	- [ ] `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`
-	- [ ] `plugins=( git zsh-syntax-highlighting zsh-autosuggestions )` in `~/.zshrc`
-- [ ] Terminal settings
-	- [ ] Make ZSH profile primary
-	- [ ] Uncheck "Use Transparency from system"
-	- [ ] Change color to ~10%
-	- [ ] Change Default color to black
-- [ ] Starship setup with https://starship.rs/presets/tokyo-night Preset
-- [ ] Desktop > Dock > Dock Visibility > Intelligently hide
-- [ ] Update DNS in browsers to custom DNS
-- [ ] NextDNS install on system
-- [ ] `./start-mullvad-browser.desktop --register-app` to add mullvad to application list
-- [ ] In case of bug with gdm to change login screen
-	- [ ] Go into Settings > Devices > Displays; Configure; Save
-	- [ ] `sudo cp ~/.config/monitors.xml ~gdm/.config/monitors.xml`
-	- [ ] `sudo chown gdm:gdm ~gdm/.config/monitors.xml`
-	- [ ] Reboot
+- OhMyZsh Install
+	- `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+	- `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
+	- `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+	- `plugins=( git zsh-syntax-highlighting zsh-autosuggestions )` in `~/.zshrc`
+- Starship setup with https://starship.rs/presets/tokyo-night Preset
+	- Grab Glyphs from https://www.nerdfonts.com/cheat-sheet, if needed
+- Terminal settings
+	- Make ZSH profile primary
+	- Uncheck "Use Transparency from system"
+	- Change color to ~10%
+	- Change Default color to black
+- Desktop > Dock > Dock Visibility > Intelligently hide
+- Update DNS in browsers to custom DNS
+- NextDNS install on system
+- `./start-mullvad-browser.desktop --register-app` to add mullvad to application list
+- In case of bug with gdm to change login screen
+	- Go into Settings > Devices > Displays; Configure; Save
+	- `sudo cp ~/.config/monitors.xml ~gdm/.config/monitors.xml`
+	- `sudo chown gdm:gdm ~gdm/.config/monitors.xml`
+	- Reboot
 
 ## Sources:
 - https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html
