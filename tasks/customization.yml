@@ -80,6 +80,10 @@
     dest: "/home/{{ username }}/Downloads/"
     remote_src: yes
 
+- name: Add Mullvad Browser to App list
+  ansible.builtin.shell: "/home/{{ username }}/Downloads/mullvad-browser/start-mullvad-browser.desktop --register-app"
+  become: true
+
 - name: Remove Mullvad archive
   ansible.builtin.file:
     path: "/home/{{ username }}/Downloads/{{ mullvad_browser_ver }}"
