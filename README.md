@@ -38,6 +38,7 @@ ansible-galaxy install -r requirements.yml
 # Run the playbook
 ansible-playbook -i inventory.ini Debian.yml -K 
 # Manually remove user to sudo group (sudoers) added manually before
+## sudo access will still be there
 sudo visudo
 #Reboot to finalize changes
 reboot
