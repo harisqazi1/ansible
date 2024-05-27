@@ -81,33 +81,11 @@
     remote_src: yes
 
 - name: Add Mullvad Browser to App list
-  ansible.builtin.shell: "/home/{{ username }}/Downloads/mullvad-browser/start-mullvad-browser.desktop --register-app"
-  become: true
+  ansible.builtin.copy:
+    src: "/home/{{ username }}/Downloads/mullvad-browser/start-mullvad-browser.desktop"
+    dest: "/home/{{ username }}/.local/share/applications/"
 
 - name: Remove Mullvad archive
   ansible.builtin.file:
     path: "/home/{{ username }}/Downloads/{{ mullvad_browser_ver }}"
     state: absent
-
-# Ohmyzsh with plugins
-- name: Ohmyzsh Install
-  ansible.builtin.expect:
-    command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    responses:
-      (?i)shell to zsh?(?i): "n"
-
-- name: Git clone plugin - zsh-syntax-highlighting
-  ansible.builtin.git:
-    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
-    dest: "/home/{{ username }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
-
-- name: Git clone plugin - zsh-autosuggestions
-  ansible.builtin.git:
-    repo: https://github.com/zsh-users/zsh-autosuggestions.git
-    dest: "/home/{{ username }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
-
-- name: Ohmyzsh update plugins
-  ansible.builtin.lineinfile:
-    path: "/home/{{ username }}/.zshrc"
-    regexp: '^plugins='
-    line: plugins=( git zsh-syntax-highlighting zsh-autosuggestions ripgrep rsync colored-man-pages )

@@ -23,10 +23,8 @@ source ~/.profile
 su root #`su` could be used, as it assumes root by default
 # Adduser to sudo group
 adduser user sudo
-# Manually add user to sudo group (sudoers) by adding them under root and copying the same permissions as root
-sudo visudo 
-# Exit from root
-exit
+# Reboot to allow user to get perms to sudoers
+reboot
 # Install git and Ansible
 sudo apt install git ansible -y
 # Download this repository
