@@ -31,20 +31,19 @@ apt_packages:
   - akregator
   - apt-transport-https
   - bleachbit
-  #- borgbackup
+  - borgbackup
   - btop
-  - cherrytree
+  - calibre
   - chkrootkit
   - clamav
   - cmake
   - codium
   - curl
-  - dvipng
+  - dbus-x11  #Required to do gsettings from root for a user
   - ffmpeg
   - filezilla
   - firefox
   - firefox-esr
-  #- firejail #method of sandboxing
   - firmware-iwlwifi
   - firmware-misc-nonfree
   - flameshot
@@ -58,11 +57,12 @@ apt_packages:
   - kdenlive
   - keepassxc
   - kid3
-  #- kloak #Keystroke Anonymization - Installed in Kicksecure, I think
   - libreoffice
   - linux-headers-amd64
   - lynis
+  - macchanger
   - mat2
+  - meld
   - mkvtoolnix
   - mpv
   - neofetch
@@ -77,6 +77,7 @@ apt_packages:
   - python3
   - python3-pip
   - qbittorrent
+  - rfkill
   - rhythmbox
   - ripgrep
   - rkhunter
@@ -85,7 +86,6 @@ apt_packages:
   - stacer
   - terminator
   - tomb
-  - macchanger
   - unzip
   - variety
   - virtualbox
@@ -99,7 +99,7 @@ apt_signed_repos:
 
 # Install flatpak and listed packages
 flatpak_packages:
-  - name: com.calibre_ebook.calibre
+  #- name: com.calibre_ebook.calibre
   - name: com.github.johnfactotum.Foliate
   - name: com.github.tchx84.Flatseal
   - name: com.github.z.Cumulonimbus
@@ -118,7 +118,6 @@ flatpak_packages:
 # Install snap and and listed packages
 snap_packages:
   - name: bitwarden
-  - name: authy
   - name: postman
 
 npm_packages:
