@@ -42,7 +42,7 @@ apt_packages:
   - dbus-x11  #Required to do gsettings from root for a user
   - ffmpeg
   - filezilla
-  - firefox
+  #- firefox
   - firefox-esr
   - firmware-iwlwifi
   - firmware-misc-nonfree
@@ -73,7 +73,7 @@ apt_packages:
   - nvtop
   - obs-studio
   - plantuml   #creation of a wide array of diagrams
-  - polybar  - #Create Status Bars
+  - polybar  #Create Status Bars
   - python3
   - python3-pip
   - qbittorrent

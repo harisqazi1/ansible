@@ -40,15 +40,15 @@
     url: "https://freefilesync.org/download/{{ freefilesync_file_ver }}"
     dest: "/home/{{ username }}/Downloads/FreeFileSync/{{ freefilesync_file_ver }}"
 
-- name: Extract FreeFileSync Installer into /Downloads
-  ansible.builtin.unarchive:
-    src: "/home/{{ username }}/Downloads/FreeFileSync/{{ freefilesync_file_ver }}"
-    dest: "/home/{{ username }}/Downloads/FreeFileSync"
+# - name: Extract FreeFileSync Installer into /Downloads
+#   ansible.builtin.unarchive:
+#     src: "/home/{{ username }}/Downloads/FreeFileSync/{{ freefilesync_file_ver }}"
+#     dest: "/home/{{ username }}/Downloads/FreeFileSync"
 
-- name: Removing FreeFileSync File
-  ansible.builtin.file:
-    path: "/home/{{ username }}/Downloads/FreeFileSync/{{ freefilesync_file_ver }}"
-    state: absent
+# - name: Removing FreeFileSync File
+#   ansible.builtin.file:
+#     path: "/home/{{ username }}/Downloads/FreeFileSync/{{ freefilesync_file_ver }}"
+#     state: absent
 
 - name: Removing debian directory (clean-up)
   ansible.builtin.file:

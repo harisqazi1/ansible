@@ -51,7 +51,7 @@
     remote_src: yes
 
 - name: Fonts Cache Reload
-  ansible.builtin.command: fc-cache -f
+  ansible.builtin.shell: fc-cache -f
 
 - name: Download tor
   ansible.builtin.get_url:
